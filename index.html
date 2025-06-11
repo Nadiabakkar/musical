@@ -2,92 +2,118 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Soundwaves and Semantic Webs</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      line-height: 1.6;
       margin: 0;
       padding: 0;
-      background: #f4f4f4;
+      background: #f5f5f5;
     }
-    header {
-      background: #333;
-      color: #fff;
-      padding: 20px 0;
+
+    .header {
+      background-image: url('assets/images/header.jpg'); /* Replace this if you uploaded a background */
+      background-size: cover;
+      background-position: center;
+      color: white;
       text-align: center;
+      padding: 100px 20px;
     }
-    .container {
-      padding: 20px;
-      max-width: 1000px;
-      margin: auto;
-      background: #fff;
+
+    .header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
     }
-    .icons {
+
+    .header p {
+      font-size: 1.2em;
+      margin-top: 0;
+    }
+
+    .icon-section {
       display: flex;
-      justify-content: space-around;
-      margin: 20px 0;
+      justify-content: center;
+      gap: 40px;
+      margin: 40px 0;
+      flex-wrap: wrap;
     }
-    .icon {
+
+    .icon-card {
       text-align: center;
     }
-    .icon img {
-      width: 100px;
-      height: 100px;
+
+    .icon-card img {
+      width: 180px;
+      height: 180px;
       object-fit: cover;
       border-radius: 50%;
+      border: 3px solid #ccc;
     }
-    .sections ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      justify-content: space-around;
-    }
-    .sections li a {
+
+    .icon-card a {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
       text-decoration: none;
       color: #333;
-      font-weight: bold;
+    }
+
+    .sections {
+      text-align: center;
+      margin: 60px 0;
+    }
+
+    .sections a {
+      margin: 10px;
+      display: inline-block;
+      padding: 12px 20px;
+      background-color: #333;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+
+    .sections a:hover {
+      background-color: #555;
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <h1>Soundwaves and Semantic Webs: Bridging Music and Data in Morocco, Tunisia and Uzbekistan</h1>
-  </header>
-  <div class="container">
-    <p>Welcome to our project site! This space explores the fusion of traditional music and semantic web technologies across three culturally rich nations: Morocco, Tunisia, and Uzbekistan.</p>
+  <div class="header">
+    <h1>Soundwaves and Semantic Webs</h1>
+    <p>Bridging music and data in Morocco, Tunisia, and Uzbekistan</p>
+  </div>
 
-    <div class="icons">
-      <div class="icon">
-        <a href="morocco.html">
-          <img src="assets/images/morocco.jpg" alt="Morocco">
-          <p><strong>Morocco</strong></p>
-        </a>
-      </div>
-      <div class="icon">
-        <a href="tunisia.html">
-          <img src="assets/images/tunisia.jpg" alt="Tunisia">
-          <p><strong>Tunisia</strong></p>
-        </a>
-      </div>
-      <div class="icon">
-        <a href="uzbekistan.html">
-          <img src="assets/images/uzbekistan.jpg" alt="Uzbekistan">
-          <p><strong>Uzbekistan</strong></p>
-        </a>
-      </div>
+  <div class="icon-section">
+    <div class="icon-card">
+      <a href="morocco.html">
+        <img src="assets/images/Morocco.png" alt="Morocco" />
+        Morocco
+      </a>
     </div>
+    <div class="icon-card">
+      <a href="tunisia.html">
+        <img src="assets/images/Tunisia.png" alt="Tunisia" />
+        Tunisia
+      </a>
+    </div>
+    <div class="icon-card">
+      <a href="uzbekistan.html">
+        <img src="assets/images/Uzbekistan.jpg" alt="Uzbekistan" />
+        Uzbekistan
+      </a>
+    </div>
+  </div>
 
-    <div class="sections">
-      <ul>
-        <li><a href="topic.html">Topic</a></li>
-        <li><a href="methodology.html">Methodology</a></li>
-        <li><a href="challenges.html">Challenges & Solutions</a></li>
-      </ul>
-    </div>
+  <div class="sections">
+    <a href="topic.html">Topic</a>
+    <a href="methodology.html">Methodology</a>
+    <a href="challenges.html">Challenges</a>
+    <a href="solutions.html">Solutions</a>
   </div>
 </body>
 
