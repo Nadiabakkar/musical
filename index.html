@@ -18,34 +18,26 @@
       text-align: center;
     }
 
-    header h1 {
-      font-size: 48px;
+    .title-line {
+      font-size: 38px;
       font-weight: 900;
       color: #000;
-      margin-bottom: 10px;
+      margin: 0;
+      line-height: 1.3;
     }
 
-    header h2 {
-      font-size: 20px;
-      font-weight: 400;
-      color: #444;
-      margin-top: 0;
-    }
-
-    .intro {
-      text-align: center;
-      max-width: 700px;
-      margin: 30px auto;
-      font-size: 18px;
-      padding: 0 20px;
-      color: #333;
+    .subtitle-line {
+      font-size: 22px;
+      font-weight: 900;
+      color: #000;
+      margin-top: 10px;
     }
 
     .icons {
       display: flex;
       justify-content: center;
       gap: 40px;
-      margin: 50px 0;
+      margin: 40px 0 20px;
       flex-wrap: wrap;
     }
 
@@ -54,22 +46,31 @@
     }
 
     .icon-box img {
-      width: 180px;
-      height: 180px;
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
       object-fit: cover;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     .icon-box p {
-      margin-top: 12px;
+      margin-top: 10px;
       font-size: 16px;
       font-weight: 600;
     }
 
+    .intro {
+      text-align: center;
+      max-width: 700px;
+      margin: 30px auto 40px;
+      font-size: 18px;
+      padding: 0 20px;
+      color: #333;
+    }
+
     .sections {
       max-width: 600px;
-      margin: 40px auto;
+      margin: 0 auto 60px;
       text-align: center;
       padding: 0 20px;
     }
@@ -94,22 +95,15 @@
       padding: 30px;
       font-size: 14px;
       background-color: #e0e0e0;
-      margin-top: 60px;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Soundwaves and Semantic Webs</h1>
-    <h2>Bridging music and data in Morocco, Tunisia and Uzbekistan</h2>
+    <h1 class="title-line">Soundwaves and Semantic Webs:</h1>
+    <h2 class="subtitle-line">Bridging music and data in Morocco, Tunisia and Uzbekistan</h2>
   </header>
-
-  <div class="intro">
-    <p>
-      Welcome to our project exploring the fusion of musical heritage and semantic technologies in Morocco, Tunisia, and Uzbekistan. Dive into each country’s case study by clicking the icons below!
-    </p>
-  </div>
 
   <div class="icons">
     <div class="icon-box">
@@ -132,13 +126,18 @@
     </div>
   </div>
 
+  <div class="intro">
+    <p>
+      Welcome to our project, where we explore the rich musical heritage of Morocco, Tunisia, and Uzbekistan through the lens of Wikidata knowledge graphs, SPARQL queries, RDF structures, and large language models. By combining these tools, we highlight how traditional music can be represented, explored, and better understood in digital environments.
+    </p>
+  </div>
+
   <div class="sections">
     <h2>📂 Sections</h2>
     <ul>
       <li><a href="topic.html">Topic</a></li>
       <li><a href="methodology.html">Methodology</a></li>
       <li><a href="challenges.html">Challenges</a></li>
-      <li><a href="solutions.html">Solutions</a></li>
     </ul>
   </div>
 
