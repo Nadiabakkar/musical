@@ -1,120 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>Soundwaves and Semantic Webs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f5f5f5;
-    }
-
-    .header {
-      background-image: url('assets/images/header.jpg'); /* Replace this if you uploaded a background */
-      background-size: cover;
-      background-position: center;
-      color: white;
-      text-align: center;
-      padding: 100px 20px;
-    }
-
-    .header h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-    }
-
-    .header p {
-      font-size: 1.2em;
-      margin-top: 0;
-    }
-
-    .icon-section {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      margin: 40px 0;
-      flex-wrap: wrap;
-    }
-
-    .icon-card {
-      text-align: center;
-    }
-
-    .icon-card img {
-      width: 180px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 3px solid #ccc;
-    }
-
-    .icon-card a {
-      display: block;
-      margin-top: 10px;
-      font-weight: bold;
-      text-decoration: none;
+      background-color: #f4f4f4;
       color: #333;
     }
 
-    .sections {
+    header {
+      background-color: #e0e0e0;
+      padding: 60px 20px 30px;
       text-align: center;
-      margin: 60px 0;
+    }
+
+    header h1 {
+      font-size: 48px;
+      font-weight: 900;
+      color: #000;
+      margin-bottom: 10px;
+    }
+
+    header h2 {
+      font-size: 20px;
+      font-weight: 400;
+      color: #444;
+      margin-top: 0;
+    }
+
+    .intro {
+      text-align: center;
+      max-width: 700px;
+      margin: 30px auto;
+      font-size: 18px;
+      padding: 0 20px;
+      color: #333;
+    }
+
+    .icons {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin: 50px 0;
+      flex-wrap: wrap;
+    }
+
+    .icon-box {
+      text-align: center;
+    }
+
+    .icon-box img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .icon-box p {
+      margin-top: 12px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .sections {
+      max-width: 600px;
+      margin: 40px auto;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .sections ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sections li {
+      margin: 10px 0;
+      font-size: 18px;
     }
 
     .sections a {
-      margin: 10px;
-      display: inline-block;
-      padding: 12px 20px;
-      background-color: #333;
-      color: white;
       text-decoration: none;
-      border-radius: 6px;
-      transition: background 0.3s;
+      color: #1a73e8;
     }
 
-    .sections a:hover {
-      background-color: #555;
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+      background-color: #e0e0e0;
+      margin-top: 60px;
     }
   </style>
 </head>
-
 <body>
-  <div class="header">
+
+  <header>
     <h1>Soundwaves and Semantic Webs</h1>
-    <p>Bridging music and data in Morocco, Tunisia, and Uzbekistan</p>
+    <h2>Bridging music and data in Morocco, Tunisia and Uzbekistan</h2>
+  </header>
+
+  <div class="intro">
+    <p>
+      Welcome to our project exploring the fusion of musical heritage and semantic technologies in Morocco, Tunisia, and Uzbekistan. Dive into each country’s case study by clicking the icons below!
+    </p>
   </div>
 
-  <div class="icon-section">
-    <div class="icon-card">
+  <div class="icons">
+    <div class="icon-box">
       <a href="morocco.html">
-        <img src="assets/images/Morocco.png" alt="Morocco" />
-        Morocco
+        <img src="assets/images/Morocco.png" alt="Morocco">
       </a>
+      <p>Morocco</p>
     </div>
-    <div class="icon-card">
+    <div class="icon-box">
       <a href="tunisia.html">
-        <img src="assets/images/Tunisia.png" alt="Tunisia" />
-        Tunisia
+        <img src="assets/images/Tunisia.png" alt="Tunisia">
       </a>
+      <p>Tunisia</p>
     </div>
-    <div class="icon-card">
+    <div class="icon-box">
       <a href="uzbekistan.html">
-        <img src="assets/images/Uzbekistan.jpg" alt="Uzbekistan" />
-        Uzbekistan
+        <img src="assets/images/Uzbekistan.jpg" alt="Uzbekistan">
       </a>
+      <p>Uzbekistan</p>
     </div>
   </div>
 
   <div class="sections">
-    <a href="topic.html">Topic</a>
-    <a href="methodology.html">Methodology</a>
-    <a href="challenges.html">Challenges</a>
-    <a href="solutions.html">Solutions</a>
+    <h2>📂 Sections</h2>
+    <ul>
+      <li><a href="topic.html">Topic</a></li>
+      <li><a href="methodology.html">Methodology</a></li>
+      <li><a href="challenges.html">Challenges</a></li>
+      <li><a href="solutions.html">Solutions</a></li>
+    </ul>
   </div>
-</body>
 
+  <footer>
+    &copy; 2025 Soundwaves & Semantic Webs Project – Built with ❤️ and GitHub Pages
+  </footer>
+
+</body>
 </html>
