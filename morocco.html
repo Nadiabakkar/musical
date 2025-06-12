@@ -7,9 +7,9 @@
   <style>
     body {
       margin: 0;
-      background-color: #e3d7cd; /* soft light brown / beige */
+      background-color: #e3d7cd; /* soft beige */
       font-family: 'Georgia', serif;
-      color: #3e2c23; /* dark brown for text */
+      color: #3e2c23; /* dark brown text */
       display: flex;
       justify-content: center;
       padding: 40px 20px;
@@ -23,8 +23,8 @@
       font-style: italic;
       font-weight: 700;
       font-size: 3.5rem;
-      margin-bottom: 10px;
-      color: #6b2e2e; /* maroon-ish */
+      margin-bottom: 20px;
+      color: #6b2e2e; /* maroon */
       text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
       display: inline-flex;
       align-items: center;
@@ -32,7 +32,7 @@
       justify-content: center;
     }
     h1 .flag {
-      font-size: 3.8rem; /* slightly bigger flag */
+      font-size: 3.8rem; /* slightly bigger */
       transform: translateY(3px);
     }
     img {
@@ -40,19 +40,20 @@
       max-width: 650px;
       height: auto;
       border-radius: 8px;
-      margin-top: 30px;
+      margin: 0 auto 30px auto;
       box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+      display: block;
     }
     p.intro {
-      margin-top: 30px;
       font-size: 1.15rem;
       line-height: 1.6;
       padding: 0 15px;
       max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto;
       color: #4a372c;
-      /* Removed background-color, border-radius, and box-shadow */
+      background: transparent; /* no white background */
+      box-shadow: none;
+      text-align: center;
     }
   </style>
 </head>
