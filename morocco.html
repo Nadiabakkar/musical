@@ -2,46 +2,63 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Morocco - Soundwaves and Semantic Webs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Morocco</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-      background-color: #f9f9f9;
-      color: #222;
-    }
-    h1 {
+      background-color: #EED6C4;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
       text-align: center;
-      font-weight: bold;
-      margin-bottom: 20px;
-      font-size: 2.8rem;
+      color: #2B2B2B;
     }
-    img {
-      display: block;
-      margin: 0 auto 30px;
+
+    header {
+      padding: 40px 20px 20px;
+    }
+
+    h1 {
+      font-size: 42px;
+      font-weight: bold;
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+
+    .flag {
+      font-style: italic;
+      font-size: 24px;
+    }
+
+    .intro-image {
       max-width: 80%;
       height: auto;
+      margin-top: 10px;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    p {
-      font-size: 1.15rem;
-      line-height: 1.6;
-      text-align: justify;
+
+    .intro {
+      margin: 30px auto;
+      max-width: 800px;
+      padding: 0 20px;
+      font-size: 18px;
+      line-height: 1.7;
     }
   </style>
 </head>
 <body>
-  <h1>Morocco</h1>
-  <img src="assets/images/morocco.jpg" alt="Moroccan traditional music" />
-  <p>
-    Known for its diverse rhythms and deep-rooted traditions, Morocco’s musical heritage reflects a unique fusion of Amazigh, Arab, Andalusian, and sub-Saharan influences that have shaped the country’s cultural and historical identity. From the hypnotic rhythms of Gnawa spiritual music to the emotive calls of Aita and the elegance of Andalusi orchestras, Moroccan music expresses both the regional variety and the shared cultural memory of its people.
-  </p>
-  <p>
-    In this section, we explore how these musical expressions can be understood and represented using digital tools such as SPARQL queries, Wikidata’s knowledge graph, and large language models (LLMs). These technologies allow us to trace connections, uncover patterns, and examine how well Moroccan music is currently represented in digital environments, highlighting areas where information may still be lacking or fragmented.
-  </p>
+  <header>
+    <h1>Morocco <span class="flag">🇲🇦</span></h1>
+    <img src="assets/images/morocco.jpg" alt="Moroccan music scene" class="intro-image" />
+  </header>
+
+  <section class="intro">
+    <p>
+      Known for its diverse rhythms and deep-rooted traditions, Morocco’s musical heritage reflects a unique fusion of Amazigh, Arab, Andalusian, and sub-Saharan influences that have shaped the country’s cultural and historical identity. From the hypnotic rhythms of Gnawa spiritual music to the emotive calls of Aita and the elegance of Andalusi orchestras, Moroccan music expresses both the regional variety and the shared cultural memory of its people.
+    </p>
+    <p>
+      In this section, we explore how these musical expressions can be understood and represented using digital tools such as SPARQL queries, Wikidata’s knowledge graph, and large language models (LLMs). These technologies allow us to trace connections, uncover patterns, and examine how well Moroccan music is currently represented in digital environments, highlighting areas where information may still be lacking or fragmented.
+    </p>
+  </section>
 </body>
 </html>
