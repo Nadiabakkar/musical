@@ -7,9 +7,9 @@
   <style>
     body {
       margin: 0;
-      background-color: #e3d7cd; /* soft beige */
+      background-color: #e3d7cd;
       font-family: 'Georgia', serif;
-      color: #3e2c23; /* dark brown text */
+      color: #3e2c23;
       display: flex;
       justify-content: center;
       padding: 40px 20px;
@@ -24,7 +24,7 @@
       font-weight: 700;
       font-size: 3.5rem;
       margin-bottom: 20px;
-      color: #6b2e2e; /* maroon */
+      color: #6b2e2e;
       text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
       display: inline-flex;
       align-items: center;
@@ -40,9 +40,9 @@
       font-size: 1.4rem;
       font-style: italic;
       font-weight: bold;
-      color: #6b2e2e; /* match title color */
+      color: #6b2e2e;
       margin: 30px 0 15px 0;
-      padding-left: 15px; /* align with intro */
+      padding-left: 15px;
     }
     img {
       width: 65%;
@@ -64,6 +64,37 @@
       box-shadow: none;
       text-align: center;
     }
+    table {
+      width: 95%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      font-size: 1rem;
+    }
+    th {
+      background-color: #b35c1e;
+      color: white;
+      font-weight: bold;
+      font-style: italic;
+      padding: 12px 10px;
+      text-align: left;
+    }
+    td {
+      padding: 10px;
+      border-bottom: 1px solid #cbb6a4;
+      text-align: left;
+      vertical-align: top;
+    }
+    tr:nth-child(even) {
+      background-color: #f5eee8;
+    }
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: "Courier New", Courier, monospace;
+      background-color: #f3e7dc;
+      padding: 8px;
+      border-radius: 6px;
+    }
   </style>
 </head>
 <body>
@@ -80,6 +111,85 @@
 
     <!-- Subtitle Section -->
     <div class="subtitle">🎵 <em>Interpreting SPARQL Queries and Results:</em></div>
+
+    <!-- Table Section -->
+    <table>
+      <thead>
+        <tr>
+          <th><em><strong>Query</strong></em></th>
+          <th><em><strong>Result</strong></em></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><pre>
+SELECT ?item ?itemLabel 
+WHERE {
+  ?item wdt:P31 wd:Q5; 
+        wdt:P27 wd:Q1028; 
+        wdt:P106 wd:Q639669.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+LIMIT 10</pre></td>
+          <td>Returns a list of Moroccan musicians with their English labels.</td>
+        </tr>
+        <tr>
+          <td><pre>
+SELECT ?genre ?genreLabel 
+WHERE {
+  ?genre wdt:P31 wd:Q188451.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+LIMIT 15</pre></td>
+          <td>Finds musical genres (as subclasses of music genre) from Wikidata.</td>
+        </tr>
+        <tr>
+          <td><pre>
+SELECT ?artist ?artistLabel ?genreLabel 
+WHERE {
+  ?artist wdt:P27 wd:Q1028;
+          wdt:P106 wd:Q639669;
+          wdt:P136 ?genre.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+LIMIT 20</pre></td>
+          <td>Returns Moroccan musicians and their associated genres.</td>
+        </tr>
+        <tr>
+          <td><pre>
+SELECT ?item ?itemLabel 
+WHERE {
+  ?item wdt:P495 wd:Q1028; 
+        wdt:P31 wd:Q7366.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+LIMIT 10</pre></td>
+          <td>Lists Moroccan musical instruments.</td>
+        </tr>
+        <tr>
+          <td><pre>
+SELECT ?song ?songLabel 
+WHERE {
+  ?song wdt:P31 wd:Q7366;
+        wdt:P495 wd:Q1028.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+LIMIT 10</pre></td>
+          <td>Displays Moroccan songs defined as musical works produced in Morocco.</td>
+        </tr>
+        <tr>
+          <td><pre>
+SELECT ?group ?groupLabel 
+WHERE {
+  ?group wdt:P31 wd:Q215380;
+         wdt:P17 wd:Q1028.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+LIMIT 10</pre></td>
+          <td>Finds Moroccan musical groups or bands.</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </body>
 </html>
