@@ -1,69 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Morocco - Soundwaves and Semantic Webs</title>
-  <link href="https://cdn.jsdelivr.net/npm/architectcss@1.0.5/dist/architect.min.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Morocco</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      padding: 2rem;
-      background-color: #fefefe;
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      background-color: #fdfdfd;
       color: #222;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 0 20px;
     }
-
-    h1.title {
-      font-weight: 900;
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      color: #222;
+    header {
+      text-align: center;
+      padding: 60px 20px 20px;
     }
-
-    img.main-image {
-      max-width: 100%;
-      height: auto;
+    h1 {
+      font-size: 2.5em;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .main-image {
       display: block;
-      margin: 0 auto 2rem auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
+      margin: 20px auto;
+      max-width: 90%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
-
-    p.intro-text {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      max-width: 900px;
-      margin: 0 auto 3rem auto;
+    .intro {
+      max-width: 800px;
+      margin: 30px auto;
+      font-size: 1.1em;
+      line-height: 1.7;
       text-align: justify;
-      color: #333;
     }
   </style>
 </head>
-
 <body>
+
   <header>
-    <h1 class="title">Morocco</h1>
+    <h1>
+      Morocco
+    </h1>
   </header>
 
-  <main>
-    <img src="assets/morocco-main.jpg" alt="Moroccan traditional music scene" class="main-image" />
+  <img src="assets/morocco.jpg" alt="Moroccan music" class="main-image" />
 
-    <p class="intro-text">
-      Known for its diverse rhythms and deep-rooted traditions, Morocco’s musical heritage reflects a unique fusion
-      of Amazigh, Arab, Andalusian, and sub-Saharan influences that have shaped the country’s cultural and historical
-      identity. From the hypnotic rhythms of Gnawa spiritual music to the emotive calls of Aita and the elegance of
-      Andalusi orchestras, Moroccan music expresses both the regional variety and the shared cultural memory of its
-      people.
+  <div class="intro">
+    <p>
+      Known for its diverse rhythms and deep-rooted traditions, Morocco’s musical heritage reflects a unique fusion of Amazigh, Arab, Andalusian, and sub-Saharan influences that have shaped the country’s cultural and historical identity. From the hypnotic rhythms of Gnawa spiritual music to the emotive calls of Aita and the elegance of Andalusi orchestras, Moroccan music expresses both the regional variety and the shared cultural memory of its people.
     </p>
+    <p>
+      In this section, we explore how these musical expressions can be understood and represented using digital tools such as SPARQL queries, Wikidata’s knowledge graph, and large language models (LLMs). These technologies allow us to trace connections, uncover patterns, and examine how well Moroccan music is currently represented in digital environments, highlighting areas where information may still be lacking or fragmented.
+    </p>
+  </div>
 
-    <p class="intro-text">
-      In this section, we explore how these musical expressions can be understood and represented using digital tools
-      such as SPARQL queries, Wikidata’s knowledge graph, and large language models (LLMs). These technologies allow
-      us to trace connections, uncover patterns, and examine how well Moroccan music is currently represented in
-      digital environments, highlighting areas where information may still be lacking or fragmented.
-    </p>
-  </main>
 </body>
-
 </html>
