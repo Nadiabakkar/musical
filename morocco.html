@@ -7,9 +7,9 @@
   <style>
     body {
       margin: 0;
-      background-color: #e3d7cd; /* soft light brown / beige */
+      background-color: #e3d7cd; /* soft beige */
       font-family: 'Georgia', serif;
-      color: #3e2c23; /* dark brown for text */
+      color: #3e2c23; /* dark brown text */
       display: flex;
       justify-content: center;
       padding: 40px 20px;
@@ -23,8 +23,8 @@
       font-style: italic;
       font-weight: 700;
       font-size: 3.5rem;
-      margin-bottom: 10px;
-      color: #6b2e2e; /* maroon-ish */
+      margin-bottom: 20px;
+      color: #6b2e2e; /* maroon */
       text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
       display: inline-flex;
       align-items: center;
@@ -32,43 +32,36 @@
       justify-content: center;
     }
     h1 .flag {
-      font-size: 3.8rem; /* slightly bigger flag */
+      font-size: 3.8rem;
       transform: translateY(3px);
+    }
+    .subtitle {
+      text-align: left;
+      font-size: 1.4rem;
+      font-style: italic;
+      font-weight: bold;
+      color: #5a2a5a; /* deep earthy purple */
+      margin: 30px 0 15px 0;
     }
     img {
       width: 65%;
       max-width: 650px;
       height: auto;
       border-radius: 8px;
-      margin-top: 30px;
+      margin: 0 auto 30px auto;
       box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+      display: block;
     }
     p.intro {
-      margin-top: 30px;
       font-size: 1.15rem;
       line-height: 1.6;
       padding: 0 15px;
       max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-      color: #3e2c23;
-      /* No background color to blend with page */
-    }
-    /* New subtitle style */
-    h2.subtitle {
-      font-style: italic;
-      font-weight: 700;
-      font-size: 2rem;
-      color: #5a2e8a; /* darker purple */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 50px;
-      margin-bottom: 20px;
-    }
-    h2.subtitle .emoji {
-      font-size: 2.3rem;
+      margin: 0 auto;
+      color: #4a372c;
+      background: transparent;
+      box-shadow: none;
+      text-align: center;
     }
   </style>
 </head>
@@ -84,13 +77,8 @@
       In this section, we explore how these musical expressions can be understood and represented using digital tools such as SPARQL queries, Wikidata’s knowledge graph, and large language models (LLMs). These technologies allow us to trace connections, uncover patterns, and examine how well Moroccan music is currently represented in digital environments, highlighting areas where information may still be lacking or fragmented.
     </p>
 
-    <!-- New subtitle -->
-    <h2 class="subtitle">
-      <span class="emoji">🎵</span> Interpreting SPARQL Queries and Results:
-    </h2>
-
-    <!-- Here is where your table or other content will go -->
-    
+    <!-- Subtitle Section -->
+    <div class="subtitle">🎵 <em>Interpreting SPARQL Queries and Results:</em></div>
   </div>
 </body>
 </html>
