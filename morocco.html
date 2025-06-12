@@ -2,62 +2,73 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Morocco</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Morocco - Soundwaves and Semantic Webs</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f5efe6; /* soft light beige-brown */
       margin: 0;
-      padding: 0;
-      color: #2e2e2e;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 2.8em;
-      margin-top: 40px;
-      font-style: italic;
-      font-weight: bold;
+      background-color: #e3d7cd; /* soft light brown / beige */
+      font-family: 'Georgia', serif;
+      color: #3e2c23; /* dark brown for text */
       display: flex;
       justify-content: center;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 1000px;
+      width: 100%;
+      text-align: center;
+    }
+    h1 {
+      font-style: italic;
+      font-weight: 700;
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+      color: #6b2e2e; /* maroon-ish */
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+      display: inline-flex;
       align-items: center;
       gap: 12px;
+      justify-content: center;
     }
-
-    .flag {
-      font-size: 2.2em;
+    h1 .flag {
+      font-size: 3.8rem; /* slightly bigger flag */
+      transform: translateY(3px);
     }
-
-    .intro-image {
-      max-width: 600px;
-      width: 100%;
+    img {
+      width: 65%;
+      max-width: 650px;
       height: auto;
-      margin-top: 25px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      border-radius: 8px;
+      margin-top: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
     }
-
-    .intro-text {
-      max-width: 700px;
-      margin: 40px auto;
-      font-size: 1.1em;
+    p.intro {
+      margin-top: 30px;
+      font-size: 1.15rem;
       line-height: 1.6;
-      padding: 0 20px;
+      padding: 0 15px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #4a372c;
+      background-color: #f9f4f0;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
   </style>
 </head>
 <body>
-
-  <h1><span class="flag">🇲🇦</span>Soundwaves and Semantic Webs: Morocco</h1>
-
-  <img src="assets/images/morocco.jpg" alt="Moroccan music" class="intro-image"/>
-
-  <div class="intro-text">
-    Known for its diverse rhythms and deep-rooted traditions, Morocco’s musical heritage reflects a unique fusion of Amazigh, Arab, Andalusian, and sub-Saharan influences that have shaped the country’s cultural and historical identity. From the hypnotic rhythms of Gnawa spiritual music to the emotive calls of Aita and the elegance of Andalusi orchestras, Moroccan music expresses both the regional variety and the shared cultural memory of its people.  
-    <br><br>
-    In this section, we explore how these musical expressions can be understood and represented using digital tools such as SPARQL queries, Wikidata’s knowledge graph, and large language models (LLMs). These technologies allow us to trace connections, uncover patterns, and examine how well Moroccan music is currently represented in digital environments, highlighting areas where information may still be lacking or fragmented.
+  <div class="container">
+    <h1>
+      Morocco <span class="flag">🇲🇦</span>
+    </h1>
+    <img src="assets/images/morocco.jpg" alt="Morocco musical heritage" />
+    <p class="intro">
+      Known for its diverse rhythms and deep-rooted traditions, Morocco’s musical heritage reflects a unique fusion of Amazigh, Arab, Andalusian, and sub-Saharan influences that have shaped the country’s cultural and historical identity. From the hypnotic rhythms of Gnawa spiritual music to the emotive calls of Aita and the elegance of Andalusi orchestras, Moroccan music expresses both the regional variety and the shared cultural memory of its people.
+      <br /><br />
+      In this section, we explore how these musical expressions can be understood and represented using digital tools such as SPARQL queries, Wikidata’s knowledge graph, and large language models (LLMs). These technologies allow us to trace connections, uncover patterns, and examine how well Moroccan music is currently represented in digital environments, highlighting areas where information may still be lacking or fragmented.
+    </p>
   </div>
-
 </body>
 </html>
