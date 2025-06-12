@@ -1,286 +1,340 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Moroccan Music Queries</title>
-<style>
-  body {
-    background-color: #e3d7cd;
-    font-family: Georgia, serif;
-    color: #3e2c23;
-    padding: 20px;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-  }
-  thead tr {
-    background-color: #8b4c1b; /* dark earthy orange */
-    color: #f1e7dc;
-  }
-  thead th {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 3px solid #8b4c1b;
-  }
-  tbody tr {
-    border-bottom: 1.5px solid #8b4c1b;
-  }
-  tbody td {
-    padding: 10px;
-    vertical-align: top;
-    white-space: pre-wrap;
-    font-size: 0.9rem;
-  }
-  tbody tr:nth-child(even) {
-    background-color: #f6eee4;
-  }
-</style>
-</head>
-<body>
 
-<h1>Moroccan Music SPARQL Queries & Results</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>SPARQL Query</th>
-      <th>Result Explanation</th>
-    </tr>
-  </thead>
-  <tbody>
-
-    <tr>
-      <td>
-SELECT ?genre ?genreLabel ?description ?image WHERE {
-
-?genre wdt:P31/wdt:P279* wd:Q188451.   # instance of music genre
-
-?genre wdt:P495 wd:Q1028.              # country of origin Morocco
-
-OPTIONAL { ?genre schema:description ?description. FILTER(LANG(?description) = "en") }
-
-OPTIONAL { ?genre wdt:P18 ?image. }
-
-SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
-
-}
-
-LIMIT 50
-      </td>
-      <td>
-This query retrieves Moroccan music genres along with their English descriptions and images when available. It returns a selection of distinct musical genres that originate from Morocco, providing insight into the country’s diverse musical styles.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-SELECT DISTINCT ?artist ?artistLabel ?description ?image
-
-WHERE {
-
-?artist wdt:P31 wd:Q5.  # instance of human
-
-?artist wdt:P27 wd:Q1028.  # Moroccan citizenship
-
-The UNION clause to get either singers OR musicians
-
-{
-
-?artist wdt:P106 wd:Q639669.  # occupation: singer
-
-}
-
-UNION
-
-{
-
-?artist wdt:P106 wd:Q36834.   # occupation: musician
-
-}
-
-OPTIONAL { ?artist schema:description ?description. FILTER(LANG(?description) = "en") }
-
-OPTIONAL { ?artist wdt:P18 ?image. }
-
-SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
-
-}
-
-ORDER BY ?artistLabel
-
-LIMIT 100
-      </td>
-      <td>
-This query retrieves Moroccan singers and musicians. The results include many artists, mostly old school, with fewer modern ones.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-SELECT ?band ?bandLabel ?description ?image WHERE {
-
-?band wdt:P31/wdt:P279* wd:Q215380.    # musical group or subclass
-
-?band wdt:P495 wd:Q1028.               # country of origin Morocco
-
-OPTIONAL { ?band schema:description ?description. FILTER(LANG(?description) = "en") }
-
-OPTIONAL { ?band wdt:P18 ?image. }
-
-SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
-
-}
-
-LIMIT 50
-      </td>
-      <td>
-This query retrieves musical groups or bands originating from Morocco, including their English descriptions and images when available. It provides an overview of Moroccan musical ensembles, highlighting the diversity of group acts within the country's music scene.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-SELECT DISTINCT ?work ?workLabel ?description ?image WHERE {
-
-VALUES ?type { wd:Q7366 wd:Q482994 } # Q7366 = song, Q482994 = album
-
-?work wdt:P31 ?type.                # Instance of song or album
-
-?work wdt:P495 wd:Q1028.            # Country of origin Morocco
-
-OPTIONAL { ?work schema:description ?description. FILTER(LANG(?description) = "en") }
-
-OPTIONAL { ?work wdt:P18 ?image. }
-
-SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
-
-}
-
-LIMIT 100
-      </td>
-      <td>
-This query retrieves Moroccan songs and albums by filtering for musical works originating from Morocco. The results returned only two songs, with no albums found, indicating limited coverage of Moroccan music works in the dataset.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-SELECT ?musician ?musicianLabel ?description ?image WHERE {
-
-?musician wdt:P31 wd:Q5.                   # human
-
-?musician wdt:P27 wd:Q1028.                # Moroccan citizenship
-
-OPTIONAL { ?musician schema:description ?description. FILTER(LANG(?description) = "en") }
-
-OPTIONAL { ?musician wdt:P18 ?image. }
-
-FILTER(
-
-REGEX(LCASE(STR(?description)), "\brap\b|\brapper\b") &&
-
-!REGEX(LCASE(STR(?description)), "photographer|cinematographer")
-
-)
-
-SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
-
-}
-
-ORDER BY ?musicianLabel
-
-LIMIT 100
-      </td>
-      <td>
-This query retrieves Moroccan musicians whose English descriptions include references to rap or rappers, but the results were skewed toward older artists (predominantly from the early 20th century), suggesting potential data inconsistencies or gaps in labeling contemporary Moroccan rap artists.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-SELECT ?artist ?artistLabel ?description ?image
-
-WHERE {
-
-?artist wdt:P31 wd:Q5.  # Instance of human
-
-?artist wdt:P27 wd:Q1028.  # Moroccan citizenship
-
-?artist schema:description ?description.
-
-FILTER(LANG(?description) = "en").
-
-FILTER(
-
-(CONTAINS(LCASE(?description), "amazigh") || CONTAINS(LCASE(?description), "berber"))
-
-&&
-
-(CONTAINS(LCASE(?description), "singer") || CONTAINS(LCASE(?description), "musician"))
-
-).
-
-OPTIONAL { ?artist wdt:P18 ?image. }
-
-SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
-
-}
-
-ORDER BY ?artistLabel
-
-LIMIT 100
-      </td>
-      <td>
-This query retrieves Moroccan musicians with an Amazigh / Berber identity. It provides a short list of notable figures fitting that profile.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-SELECT ?item ?itemLabel ?description
-
-WHERE {
-
-{
-
-?item wdt:P31 wd:Q7366.             # instance of song
-
-}
-
-UNION
-
-{
-
-?item wdt:P31 wd:Q482994.           # instance of album
-
-}
-
-?item wdt:P495 wd:Q1028.              # country of origin: Morocco
-
-?item schema:description ?description.
-
-FILTER(LANG(?description) = "en").
-
-FILTER(CONTAINS(LCASE(?description), "amazigh")).
-
-SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
-
-}
-
-ORDER BY ?itemLabel
-
-LIMIT 50
-      </td>
-      <td>
-This query retrieves Amazigh songs and albums originating from Morocco. However, no results were found in the dataset.
-      </td>
-    </tr>
-
-  </tbody>
-</table>
-
-</body>
+<html lang="en">  
+<head>  
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />  
+  <title>Morocco - Soundwaves and Semantic Webs</title>  
+  <style>  
+    body {  
+      margin: 0;  
+      background-color: #e3d7cd; /* soft beige */  
+      font-family: 'Georgia', serif;  
+      color: #3e2c23; /* dark brown text */  
+      display: flex;  
+      justify-content: center;  
+      padding: 40px 20px;  
+    }  
+    .container {  
+      max-width: 1000px;  
+      width: 100%;  
+      text-align: center;  
+    }  
+    h1 {  
+      font-style: italic;  
+      font-weight: 700;  
+      font-size: 3.5rem;  
+      margin-bottom: 20px;  
+      color: #6b2e2e; /* maroon */  
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.2);  
+      display: inline-flex;  
+      align-items: center;  
+      gap: 12px;  
+      justify-content: center;  
+    }  
+    h1 .flag {  
+      font-size: 3.8rem;  
+      transform: translateY(3px);  
+    }  
+    .subtitle {  
+      text-align: left;  
+      font-size: 1.4rem;  
+      font-style: italic;  
+      font-weight: bold;  
+      color: #6b2e2e; /* match title color */  
+      margin: 30px 0 15px 0;  
+      padding-left: 15px; /* align with intro */  
+    }  
+    img {  
+      width: 65%;  
+      max-width: 650px;  
+      height: auto;  
+      border-radius: 8px;  
+      margin: 0 auto 30px auto;  
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);  
+      display: block;  
+    }  
+    p.intro {  
+      font-size: 1.15rem;  
+      line-height: 1.6;  
+      padding: 0 15px;  
+      max-width: 900px;  
+      margin: 0 auto;  
+      color: #4a372c;  
+      background: transparent;  
+      box-shadow: none;  
+      text-align: center;  
+    }  
+    table {  
+      width: 100%;  
+      border-collapse: collapse;  
+      margin-top: 20px;  
+    }  
+    th, td {  
+      border: 2px solid #a0522d; /* dark earthy orange */  
+      padding: 12px 15px;  
+      vertical-align: top;  
+      text-align: left;  
+      background: transparent;  
+      color: #3e2c23; /* keep normal text color */  
+      font-family: 'Georgia', serif;  
+      font-size: 1rem;  
+    }  
+    th {  
+      color: #a0522d; /* dark earthy orange */  
+      font-weight: bold;  
+      font-style: italic;  
+      font-size: 1.15rem;  
+    }  
+  </style>  
+</head>  
+<body>  
+  <div class="container">  
+    <h1>  
+      Morocco <span class="flag">🇲🇦</span>  
+    </h1>  
+    <img src="assets/images/morocco.jpg" alt="Morocco musical heritage" />  
+    <p class="intro">  
+      Known for its diverse rhythms and deep-rooted traditions, Morocco’s musical heritage reflects a unique fusion of Amazigh, Arab, Andalusian, and sub-Saharan influences that have shaped the country’s cultural and historical identity. From the hypnotic rhythms of Gnawa spiritual music to the emotive calls of Aita and the elegance of Andalusi orchestras, Moroccan music expresses both the regional variety and the shared cultural memory of its people.  
+      <br /><br />  
+      In this section, we explore how these musical expressions can be understood and represented using digital tools such as SPARQL queries, Wikidata’s knowledge graph, and large language models (LLMs). These technologies allow us to trace connections, uncover patterns, and examine how well Moroccan music is currently represented in digital environments, highlighting areas where information may still be lacking or fragmented.  
+    </p>  
+
+    <!-- Subtitle Section -->  
+    <div class="subtitle">🎵 <em>Interpreting SPARQL Queries and Results:</em></div>
+
+    <!-- Table with queries and results -->
+    <table>
+      <thead>
+        <tr>
+          <th>Query</th>
+          <th>Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            SELECT ?genre ?genreLabel ?description ?image WHERE {<br>
+            <br>
+            ?genre wdt:P31/wdt:P279* wd:Q188451.   # instance of music genre<br>
+            <br>
+            ?genre wdt:P495 wd:Q1028.              # country of origin Morocco<br>
+            <br>
+            OPTIONAL { ?genre schema:description ?description. FILTER(LANG(?description) = "en") }<br>
+            <br>
+            OPTIONAL { ?genre wdt:P18 ?image. }<br>
+            <br>
+            SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }<br>
+            <br>
+            }<br>
+            <br>
+            LIMIT 50
+          </td>
+          <td>
+            This query retrieves Moroccan music genres along with their English descriptions and images when available. It returns a selection of distinct musical genres that originate from Morocco, providing insight into the country’s diverse musical styles .
+          </td>
+        </tr>
+        <tr>
+          <td>
+            SELECT DISTINCT ?artist ?artistLabel ?description ?image<br>
+            <br>
+            WHERE {<br>
+            <br>
+            ?artist wdt:P31 wd:Q5.  # instance of human<br>
+            <br>
+            ?artist wdt:P27 wd:Q1028.  # Moroccan citizenship<br>
+            <br>
+            The UNION clause to get either singers OR musicians<br>
+            <br>
+            {<br>
+            <br>
+            ?artist wdt:P106 wd:Q639669.  # occupation: singer<br>
+            <br>
+            }<br>
+            <br>
+            UNION<br>
+            <br>
+            {<br>
+            <br>
+            ?artist wdt:P106 wd:Q36834.   # occupation: musician<br>
+            <br>
+            }<br>
+            <br>
+            OPTIONAL { ?artist schema:description ?description. FILTER(LANG(?description) = "en") }<br>
+            <br>
+            OPTIONAL { ?artist wdt:P18 ?image. }<br>
+            <br>
+            SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }<br>
+            <br>
+            }<br>
+            <br>
+            ORDER BY ?artistLabel<br>
+            <br>
+            LIMIT 100
+          </td>
+          <td>
+            This query retrieves Moroccan singers and musicians. The results include many artists, mostly old school, with fewer modern ones.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            SELECT ?band ?bandLabel ?description ?image WHERE {<br>
+            <br>
+            ?band wdt:P31/wdt:P279* wd:Q215380.    # musical group or subclass<br>
+            <br>
+            ?band wdt:P495 wd:Q1028.               # country of origin Morocco<br>
+            <br>
+            OPTIONAL { ?band schema:description ?description. FILTER(LANG(?description) = "en") }<br>
+            <br>
+            OPTIONAL { ?band wdt:P18 ?image. }<br>
+            <br>
+            SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }<br>
+            <br>
+            }<br>
+            <br>
+            LIMIT 50
+          </td>
+          <td>
+            This query retrieves musical groups or bands originating from Morocco, including their English descriptions and images when available. It provides an overview of Moroccan musical ensembles, highlighting the diversity of group acts within the country's music scene.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            SELECT DISTINCT ?work ?workLabel ?description ?image WHERE {<br>
+            <br>
+            VALUES ?type { wd:Q7366 wd:Q482994 } # Q7366 = song, Q482994 = album<br>
+            <br>
+            ?work wdt:P31 ?type.                # Instance of song or album<br>
+            <br>
+            ?work wdt:P495 wd:Q1028.            # Country of origin Morocco<br>
+            <br>
+            OPTIONAL { ?work schema:description ?description. FILTER(LANG(?description) = "en") }<br>
+            <br>
+            OPTIONAL { ?work wdt:P18 ?image. }<br>
+            <br>
+            SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }<br>
+            <br>
+            }<br>
+            <br>
+            LIMIT 100
+          </td>
+          <td>
+            This query retrieves Moroccan songs and albums by filtering for musical works originating from Morocco. The results returned only two songs, with no albums found, indicating limited coverage of Moroccan music works in the dataset.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            SELECT ?musician ?musicianLabel ?description ?image WHERE {<br>
+            <br>
+            ?musician wdt:P31 wd:Q5.                   # human<br>
+            <br>
+            ?musician wdt:P27 wd:Q1028.                # Moroccan citizenship<br>
+            <br>
+            OPTIONAL { ?musician schema:description ?description. FILTER(LANG(?description) = "en") }<br>
+            <br>
+            OPTIONAL { ?musician wdt:P18 ?image. }<br>
+            <br>
+            FILTER(<br>
+            <br>
+            REGEX(LCASE(STR(?description)), "\brap\b|\brapper\b") &&<br>
+            <br>
+            !REGEX(LCASE(STR(?description)), "photographer|cinematographer")<br>
+            <br>
+            )<br>
+            <br>
+            SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }<br>
+            <br>
+            }<br>
+            <br>
+            ORDER BY ?musicianLabel<br>
+            <br>
+            LIMIT 100
+          </td>
+          <td>
+            This query retrieves Moroccan musicians whose English descriptions include references to rap or rappers, but the results were skewed toward older artists (predominantly from the early 20th century), suggesting potential data inconsistencies or gaps in labeling contemporary Moroccan rap artists.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            SELECT ?artist ?artistLabel ?description ?image<br>
+            <br>
+            WHERE {<br>
+            <br>
+            ?artist wdt:P31 wd:Q5.  # Instance of human<br>
+            <br>
+            ?artist wdt:P27 wd:Q1028.  # Moroccan citizenship<br>
+            <br>
+            ?artist schema:description ?description.<br>
+            <br>
+            FILTER(LANG(?description) = "en").<br>
+            <br>
+            FILTER(<br>
+            <br>
+            (CONTAINS(LCASE(?description), "amazigh") || CONTAINS(LCASE(?description), "berber"))<br>
+            <br>
+            &&<br>
+            <br>
+            (CONTAINS(LCASE(?description), "singer") || CONTAINS(LCASE(?description), "musician"))<br>
+            <br>
+            ).<br>
+            <br>
+            OPTIONAL { ?artist wdt:P18 ?image. }<br>
+            <br>
+            SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }<br>
+            <br>
+            }<br>
+            <br>
+            ORDER BY ?artistLabel<br>
+            <br>
+            LIMIT 100
+          </td>
+          <td>
+            This query retrieves Moroccan musicians with an Amazigh / Berber identity. It provides a short list of notable figures fitting that profile.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            SELECT ?item ?itemLabel ?description<br>
+            <br>
+            WHERE {<br>
+            <br>
+            {<br>
+            <br>
+            ?item wdt:P31 wd:Q7366.             # instance of song<br>
+            <br>
+            }<br>
+            <br>
+            UNION<br>
+            <br>
+            {<br>
+            <br>
+            ?item wdt:P31 wd:Q482994.           # instance of album<br>
+            <br>
+            }<br>
+            <br>
+            ?item wdt:P495 wd:Q1028.              # country of origin: Morocco<br>
+            <br>
+            ?item schema:description ?description.<br>
+            <br>
+            FILTER(LANG(?description) = "en").<br>
+            <br>
+            FILTER(CONTAINS(LCASE(?description), "amazigh")).<br>
+            <br>
+            SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }<br>
+            <br>
+            }<br>
+            <br>
+            ORDER BY ?itemLabel<br>
+            <br>
+            LIMIT 50
+          </td>
+          <td>
+            This query retrieves Amazigh songs and albums originating from Morocco. However, no results were found in the dataset.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>  
+</body>  
 </html>
