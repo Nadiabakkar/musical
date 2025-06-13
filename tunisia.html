@@ -163,6 +163,46 @@
           <td>
           This SPARQL query retrieves a list of Tunisian musicians who have collaborated with international (non-Tunisian) musicians on the same musical work (e.g., a song or album).            </tr>
          </tr>
+        <tr>
+          <td>
+         SELECT ?festival ?festivalLabel ?locationLabel ?startDate WHERE {<br>
+            <br>
+            ?festival wdt:P31 wd:Q132241;        # Instance of music festival<br>
+            <br>
+            wdt:P17 wd:Q948.          # Country: Tunisia <br>
+            <br>
+            OPTIONAL { ?festival wdt:P276 ?location. } <br>
+            <br>
+             OPTIONAL { ?festival wdt:P580 ?startDate. }<br>
+            <br>
+            SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }<br>
+            <br>
+            }<br>
+            <br>
+            ORDER BY ?startDate<br> 
+          </td>
+          <td>
+          This query produces an ordered list of festivals held in Tunisia, providing their names, where they are held (if available), and when they start (if recorded)  </tr>
+         </tr>
+        <tr>
+          <td>
+         SELECT ?album ?albumLabel ?musicianLabel WHERE { <br>
+            <br>
+            ?album wdt:P31 wd:Q482994;            # Instance of album <br>
+            <br>
+            wdt:P175 ?musician.            # Performer<br>
+            <br>
+            ?musician wdt:P27 wd:Q948.            # Nationality: Tunisia <br>
+            <br>
+             SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }<br>
+            <br>
+            } <br>
+            <br>
+            ORDER BY ?albumLabel 
+          </td>
+          <td>
+          This query is designed to retrieve information about musical works (such as songs or albums) that have been created by musicians from Tunisia  </tr>
+         </tr>
       </tbody>
     </table>
     </div>
