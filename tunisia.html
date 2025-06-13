@@ -63,7 +63,41 @@
       Tunisia's musical landscape stands as a testament to centuries of cultural exchange, where Ottoman court music mingles with Berber folk traditions and Andalusian refugees brought sophisticated maqam structures that evolved into the celebrated Ma'luf repertoire. The haunting melodies of traditional oud and violin blend seamlessly with the earthy rhythms of mezwed bagpipes and bendir drums, while modern artists continue to reimagine these ancient sounds for contemporary audiences. This North African nation has cultivated a musical identity that is both deeply rooted in classical Arabic traditions and boldly innovative, making it a cornerstone of Maghrebi cultural expression.  
       <br /><br />  
       Our investigation delves into the computational analysis of Tunisian musical traditions through advanced semantic web technologies, knowledge graph exploration via Wikidata, and machine learning approaches including large language models. By leveraging SPARQL queries and linked data principles, we aim to map the intricate relationships within Tunisia's musical ecosystem, assess the current state of digital documentation, and identify critical gaps where traditional knowledge remains underrepresented in contemporary data infrastructures.
-    </p>  
+    </p>
+       <div class="subtitle">🎵 <em>SPARQL QUERIES, Interpretation and Results</em></div>
+      <table>
+      <thead>
+        <tr>
+          <th>Query</th>
+          <th>Result</th>
+        </tr>
+      </thead>
+      <tbody>
+            <tr>
+          <td>
+         SELECT ?musician ?musicianLabel ?birthPlaceLabel ?genreLabel WHERE { <br>
+            <br>
+           ?musician wdt:P31 wd:Q5;          # Instance of human<br>
+            <br>
+            wdt:P106/wdt:P279* wd:Q639669;   # Occupation: musician or subclass<br>
+            <br>
+            wdt:P27 wd:Q948.        # Nationality: Tunisia <br>
+            <br>
+            OPTIONAL { ?musician wdt:P19 ?birthPlace. }<br>
+            <br>
+            OPTIONAL { ?musician wdt:P136 ?genre. }<br>
+            <br>
+            SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }<br>
+            <br>
+            }<br>
+            <br>
+           ORDER BY ?musicianLabel
+          </td>
+          <td>
+           This SPARQL query is designed to extract structured information about musicians from Tunisia using the Wikidata knowledge base. It focuses specifically on human individuals whose occupation is musician, and who have Tunisian nationality           </td>
+           </tr>
+         </tbody>
+    </table>
     </div>
   </body> 
 </html>
