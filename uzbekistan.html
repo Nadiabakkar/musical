@@ -7,35 +7,44 @@
   <style>
     body {
       margin: 0;
-      background-color: #e4f1f1; /* light earthy blue */
+      background-color: #b3d9ff; /* richer blue background */
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #222;
       text-align: center;
       padding: 40px 20px;
     }
 
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
     h1 {
       font-size: 50px;
       font-weight: bold;
       font-style: italic;
-      color: #025157;
-      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
-      margin-bottom: 30px;
+      color: #013243;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      margin: 0;
     }
 
     .flag-img {
-      width: 500px; /* larger image */
-      max-width: 90%;
+      width: 80px;
       height: auto;
-      border-radius: 10px;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     }
   </style>
 </head>
 <body>
 
-  <h1>Uzbekistan</h1>
-  <img class="flag-img" src="assets/images/uzbekistan.png" alt="Flag of Uzbekistan">
+  <div class="header">
+    <h1>Uzbekistan</h1>
+    <img class="flag-img" src="assets/images/uzbekistan.png" alt="Flag of Uzbekistan">
+  </div>
 
 </body>
 </html>
