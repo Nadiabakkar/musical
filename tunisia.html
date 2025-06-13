@@ -129,7 +129,41 @@
           <td>
            This SPARQL query is designed to extract structured information about musicians from Tunisia using the Wikidata knowledge base. It focuses specifically on human individuals whose occupation is musician, and who have Tunisian nationality           </td>
            </tr>
-         </tbody>
+         <tr>
+          <td>
+         SELECT DISTINCT ?tunisianMusician ?tunisianMusicianLabel ?collaborator ?collaboratorLabel ?work ?workLabel WHERE {  <br>
+            <br>
+            ?tunisianMusician wdt:P31 wd:Q5;         # get tunisian musicians<br>
+            <br>
+            wdt:P106/wdt:P279* wd:Q639669;<br>
+            <br>
+            wwdt:P27 wd:Q948.<br>
+            <br>
+             ?work wdt:P175 ?tunisianMusician.<br>
+            <br>
+            ?work wdt:P175 ?collaborator.<br>
+            <br>
+            FILTER(?collaborator != ?tunisianMusician)<br>
+            <br>
+            ?collaborator wdt:P31 wd:Q5;<br>
+            <br>
+           wdt:P106/wdt:P279* wd:Q639669.<br>
+            <br>
+             FILTER NOT EXISTS { <br>
+            <br>
+            ?collaborator wdt:P27 wd:Q948.<br>
+            <br>
+            }<br>
+            <br>
+            SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }<br>
+            <br>
+            } <br>
+            LIMIT 100 
+          </td>
+          <td>
+          This SPARQL query retrieves a list of Tunisian musicians who have collaborated with international (non-Tunisian) musicians on the same musical work (e.g., a song or album).            </tr>
+         </tr>
+      </tbody>
     </table>
     </div>
   </body> 
