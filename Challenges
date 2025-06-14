@@ -3,42 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Challenges and Solutions</title>
+  <title>Challenges</title>
   <style>
     body {
       margin: 0;
       padding: 40px 20px;
+      background-color: #d6e8f2; /* light earthy/pastel blue */
       font-family: 'Georgia', serif;
-      color: #000000; /* black text */
-      background-color: #e3f2f2; /* pastel earthy blue */
+      color: #0a0a23; /* very dark blue */
     }
-
     .container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
     }
-
-    h1 {
-      font-size: 3rem;
+    .section-title {
+      font-size: 2rem;
       font-weight: bold;
       font-style: italic;
-      color: #2a3b3b; /* very dark earthy blue */
       text-align: left;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    h1 .emoji {
-      font-style: italic;
+      color: #0a0a23; /* very dark blue */
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1><span class="emoji">📌</span>Challenges and Solutions</h1>
-
-    <p>This is a test paragraph just to see how black text looks against the blue background.</p>
+    <h1 class="section-title">📌 Challenges and Solutions:</h1>
   </div>
 </body>
 </html>
