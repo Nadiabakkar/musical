@@ -50,6 +50,59 @@
       margin: 30px 0 15px 0;  
       padding-left: 15px; /* align with intro */  
     }  
+    .table-container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+            vertical-align: top;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        tr:hover {
+            background-color: #e3f2fd;
+            transition: background-color 0.3s ease;
+        }
+        
+        .approach-cell {
+            font-weight: 600;
+            color: #2c3e50;
+            border-right: 3px solid #3498db;
+        }
+        
+        .context-cell {
+            line-height: 1.6;
+            color: #34495e;
+        }
+        
+        .empty-cell {
+            color: #95a5a6;
+            font-style: italic;
+        }
   </style>
 </head>
 <body>
@@ -72,14 +125,43 @@
 -Morroco 
 <br>
 -Uzbakistan </p>
-   <h1>Step1: crafting SPARQL queries</h1>
-     <p class="introo>
+    <div class="subtitle">🛠<em> 1- Crafting SPARQL queries</em></div>
+     <p class="introo">
        We constructed sophisticated SPARQL queries incorporating diverse operators: 
 <br>
 - VALUES, ORDER BY, FILTER, OPTIONAL, UNION, DISTINCT, REGEX, LIMIT, SERVICE 
 <br>
 => These analytical constructs enabled us to retrieve present information and identify absent data points 
        </p>
+     <div class="subtitle">📊<em>2- Using Language Models to Address Data Gaps</em></div>
+     <p class="intoo">
+       We employed three distinct prompting strategies across various scenarios: 
+     </p>
+     <br>
+     <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Approach</th>
+                    <th>Application Context</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="approach-cell">Zero-shot</td>
+                    <td class="context-cell empty-cell">No specific context provided</td>
+                </tr>
+                <tr>
+                    <td class="approach-cell">Few-shot</td>
+                    <td class="context-cell">Asking about informative description about Tunisian music genres</td>
+                </tr>
+                <tr>
+                    <td class="approach-cell">Chain-of-Thought</td>
+                    <td class="context-cell">Analyze the problem of under-documented Indigenous music, its consequences, and potential remedies.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
    </div>
 </body>
 </html>
