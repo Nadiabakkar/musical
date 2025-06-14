@@ -9,7 +9,7 @@
       margin: 0;
       padding: 40px 20px;
       font-family: 'Georgia', serif;
-      color: #000000; /* black text */
+      color: #3e2c23;
       background-color: #e3f2f2; /* light pastel earthy blue */
     }
 
@@ -19,27 +19,20 @@
     }
 
     h1 {
-      font-size: 3rem;
+      font-size: 2.3rem;
       font-weight: bold;
       font-style: italic;
-      color: #2a3b3b; /* very dark earthy blue */
-      text-align: left;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    h1 .emoji {
-      font-style: italic;
+      color: #6b2e2e; /* maroon */
+      margin-bottom: 30px;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1><span class="emoji">📌</span>Challenges and Solutions</h1>
-
-    <!-- You can add content here -->
-
+    <h1>📌 Challenges and Solutions</h1>
+    
+    <!-- You can add subtitles and paragraphs here -->
+    
   </div>
 </body>
 </html>
