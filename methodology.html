@@ -25,7 +25,7 @@
       padding: 0 15px;  
       max-width: 900px;  
       margin: 0 auto;  
-      color: grey;  
+      color: black;  
       background: transparent;  
       box-shadow: none;  
       text-align: center;  
@@ -36,7 +36,7 @@
       padding: 0 15px;  
       max-width: 900px;  
       margin: 0 auto;  
-      color: grey;  
+      color: black;  
       background: transparent;  
       box-shadow: none;  
       text-align: left;  
@@ -50,6 +50,18 @@
       margin: 30px 0 15px 0;  
       padding-left: 15px; /* align with intro */  
     }  
+    .top-line {
+            height: 2px;
+            background: linear-gradient(90deg, #e0e0e0 0%, #bdbdbd 100%);
+            margin-bottom: 20px;
+            border-radius: 1px;
+        }
+    .bottom-line {
+            height: 2px;
+            background: linear-gradient(90deg, #e0e0e0 0%, #bdbdbd 100%);
+            margin-bottom: 20px;
+            border-radius: 1px;
+        }
     .table-container {
             background: white;
             border-radius: 8px;
@@ -109,7 +121,9 @@
    <div class="container">
      <h1>Methodology</h1>
   <p class="intro"> Our project leverages the synergy between sophisticated Knowledge Graph querying  and  Language Models to systematically identify, validate, and populate missing factual information about diverse musical elements across selected countries which are Tunisia, Morroco and Uzbakstan within the Wikidata ecosystem </p>
-    <div class="subtitle">🎯<em>Purpose:</em></div>
+    <div class="top-line"></div>
+     <div class="subtitle">🎯<em>Purpose:</em></div>
+     <div class="bottom-line"></div>
      <p class= "introo">To enhance the comprehensiveness of semantic datasets through:
        <br>
 - Employing SPARQL queries to systematically detect information deficiencies and incomplete country profiles 
@@ -117,7 +131,9 @@
 - Leveraging Large Language Models to extract and restructure absent knowledge elements 
 <br>
 - Disseminating methodologies and results through transparent, replicable documentation </p>
+     <div class="top-line"></div>
    <div class="subtitle">🔬<em>Target of examination</em></div>
+     <div class="bottom-line"></div>
    <p class= "introo"> We focused on 3 different countries:  
 <br>
 -Tunisia  
@@ -125,7 +141,9 @@
 -Morroco 
 <br>
 -Uzbakistan </p>
+     <div class="top-line"></div>
     <div class="subtitle">🛠<em> 1- Crafting SPARQL queries</em></div>
+     <div class="bottom-line"></div>
      <p class="introo">
        We constructed sophisticated SPARQL queries incorporating diverse operators: 
 <br>
@@ -133,7 +151,9 @@
 <br>
 => These analytical constructs enabled us to retrieve present information and identify absent data points 
        </p>
+     <div class="top-line"></div>
      <div class="subtitle">📊<em>2- Using Language Models to Address Data Gaps</em></div>
+     <div class="bottom-line"></div>
      <p class="intoo">
        We employed three distinct prompting strategies across various scenarios: 
      </p>
@@ -166,7 +186,9 @@
      <p class= "introo">
        LLMs were asked to return RDF triples using Wikidata ontology that fills in the gap which were written in turtle format and simplified to show SPO clear structure 
      </p>
+     <div class="top-line"></div>
      <div class="subtitle">🧰<em> Summery of tools used</em></div>
+     <div class="bottom-line"></div>
      <div class="table-container">
         <table>
             <thead>
