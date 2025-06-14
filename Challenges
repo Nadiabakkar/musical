@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Challenges and Solutions</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      font-family: 'Georgia', serif;
+      color: #000000; /* black text */
+      background-color: #e3f2f2; /* pastel earthy blue */
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      font-style: italic;
+      color: #2a3b3b; /* very dark earthy blue */
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h1 .emoji {
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1><span class="emoji">📌</span>Challenges and Solutions</h1>
+
+    <p>This is a test paragraph just to see how black text looks against the blue background.</p>
+  </div>
+</body>
+</html>
