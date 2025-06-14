@@ -1,82 +1,485 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Uzbekistan</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      background-color: #99ccff; /* soft blue background */
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #222;
-      padding: 40px 20px;
-      text-align: center;
+  <head>
+    <meta charset="UTF-8" />
+    <title>Uzbekistan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        margin: 0;
+        background-color: #99ccff; /* soft blue background */
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: #222;
+        padding: 40px 20px;
+        text-align: center;
+        max-width: 80%;
+        margin: 0 auto;
+        color: #013243;
+
+      }
+
+      .title-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+      }
+
+      h1 {
+        font-size: 50px;
+        font-weight: bold;
+        font-style: italic;
+        color: #013243;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        margin: 0;
+      }
+      .flag {
+height: 50px;
+       transform: translateY(8px);
+       margin: 0;
+      
+      }
+      .flag img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      .flag-icon {
+        width: 60px;
+        height: auto;
+        border-radius: 5px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      }
+
+      .main-img {
+        width: 90%;
+        max-width: 800px;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        margin: 30px 0;
+      }
+
+      .intro {
+        max-width: 1000px;
+        margin: 0 auto;
+        font-size: 18px;
+        line-height: 1.7;
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      .query__title{
+        text-align: left;
+        font-size: 1.8rem;
+        font-style: italic;
+      }
+       table {  
+      width: 100%;  
+      border-collapse: collapse;  
+      margin-top: 20px;  
+   
+    }  
+    th, td {  
+      border: 2px solid #013243; 
+      padding: 12px 15px;  
+      vertical-align: top;  
+      text-align: left;  
+      background: transparent;  
+      color: #013243; 
+      font-family: 'Georgia', serif;  
+      font-size: 1rem;  
+    }  
+    th {  
+      color: #013243; 
+      font-weight: bold;  
+      font-style: italic;  
+      font-size: 1.15rem;  
+      width: 50%;
+      
+    } 
+    .comparison td{
+      width: 33.333%;
     }
-
-    .title-section {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-      margin-bottom: 30px;
+    .comparison td{
+     font-size: 20px;
+     line-height: 1.3;
     }
-
-    h1 {
-      font-size: 50px;
-      font-weight: bold;
-      font-style: italic;
-      color: #013243;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-      margin: 0;
+     .comparison td:first-child{
+    font-weight: 700;
+    font-size: 24px;
     }
-
-    .flag-icon {
-      width: 60px;
-      height: auto;
-      border-radius: 5px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    .comparison th{
+      width: 33.333%;
     }
+     
+    </style>
+  </head>
+  <body>
+    <div class="title-section">
+      <h1>Uzbekistan</h1>
+      <div class="flag"><img src="./assets/images/flag.jpg" alt=""></div>
+    </div>
 
-    .main-img {
-      width: 90%;
-      max-width: 800px;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-      margin: 30px 0;
-    }
+    <img
+      class="main-img"
+      src="./assets/images/intro-img.png"
+      alt="Uzbekistan scenery"
+    />
+  
 
-    .intro {
-      max-width: 1000px;
-      margin: 0 auto;
-      font-size: 18px;
-      line-height: 1.7;
-      text-align: justify;
-      background-color: rgba(255, 255, 255, 0.4); /* subtle transparent white */
-      padding: 20px;
-      border-radius: 10px;
-    }
-  </style>
-</head>
-<body>
+    <div class="intro">
+      <p>
+        Uzbekistan’s music is a vibrant expression of its multicultural
+        history—an audible legacy shaped by nomadic traditions, Islamic culture,
+        and centuries of exchange along the Silk Road. From the spiritual
+        elegance of <strong>Shashmaqam</strong> to regional folk styles and epic
+        storytelling performed by <strong>bakhshi</strong>, music in Uzbekistan
+        serves not just as entertainment, but as a carrier of memory, identity,
+        and social values.
+      
+      </p>
+      <p>
+        In this project, we turn to digital tools to explore how this musical
+        heritage is structured, connected, and represented in online knowledge
+        spaces. Using <strong>SPARQL queries</strong>,
+        <strong>Wikidata</strong>, and
+        <strong>large language models (LLMs)</strong> like ChatGPT, we analyze
+        how musical entities—artists, instruments, genres, and traditions—are
+        documented and interlinked. These methods allow us to assess the
+        visibility and completeness of Uzbek music in digital ecosystems, and to
+        reflect on the challenges of modeling rich cultural traditions within
+        structured data and AI outputs.
+      </p>
+      
+    </div>
+    <div class="query">
+      <p class="query__title">🎵 Interpreting SPARQL Queries and Results:</p>
+    </div>
 
-  <div class="title-section">
-    <h1>Uzbekistan</h1>
-    <img class="flag-icon" src="assets/images/uzbekistan.png" alt="Flag of Uzbekistan">
-  </div>
+        <table>
+      <thead>
+        <tr>
+          <th>Query</th>
+          <th>Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Row 1 -->
+        <tr>
+          <td>
+                    SELECT ?genre ?genreLabel ?description ?image <br><br>
+            WHERE {<br><br>
+              ?genre wdt:P31/wdt:P279* wd:Q188451. # instance of music genre<br><br>
+              ?genre wdt:P495 wd:Q265. # country of origin Uzbekistan<br><br>
+              OPTIONAL {?genre schema:description ?description. FILTER(LANG(?description) = "en") }<br><br>
+              OPTIONAL {?genre wdt:P18 ?image. }<br><br>
+              SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }<br><br>
+            }<br><br>
+            LIMIT 50
+          </td>
+          <td>
+<h3>Music genres :  5 results</h3>
+         <p>
+         This query retrieves music genres along with their English descriptions and images when available, specifically for those originating from Uzbekistan. It aims to provide insight into the country's diverse musical styles.
 
-  <img class="main-img" src="assets/images/uzbekistan.png" alt="Uzbekistan scenery">
+         </p>
+            <a href="https://w.wiki/ETwG" target="_blank" style="color:#013243; font-weight: bold; font-style: italic; text-decoration: none;">
+  🔗 Results
+</a>
+          </td>
+        </tr>
+        <!-- Row 2 -->
 
-  <div class="intro">
-    <p>
-      Uzbekistan’s music is a vibrant expression of its multicultural history—an audible legacy shaped by nomadic traditions, Islamic culture, and centuries of exchange along the Silk Road. From the spiritual elegance of <strong>Shashmaqam</strong> to regional folk styles and epic storytelling performed by <strong>bakhshi</strong>, music in Uzbekistan serves not just as entertainment, but as a carrier of memory, identity, and social values.
+      <tr>
+          <td>
+           SELECT ?musician ?musicianLabel ?description ?image <br><br>
+WHERE {<br><br>
+  ?musician wdt:P31 wd:Q5. # instance of human<br><br>
+  ?musician wdt:P106/wdt:P279* wd:Q639669. # occupation musician or subclass<br><br>
+  ?musician wdt:P27 wd:Q265. # country of citizenship Uzbekistan<br><br>
+  OPTIONAL {?musician schema:description ?description. FILTER(LANG(?description) = "en") }<br><br>
+  OPTIONAL {?musician wdt:P18 ?image.}<br><br>
+  SERVICE wikibase:label {bd:serviceParam wikibase:language "en". }<br><br>
+}<br><br>
+LIMIT 50
+          </td>
+          <td>
+<h3>Musicians : 50 results
+</h3>
+
+         <p>
+This query retrieves musicians from Uzbekistan. The results will include artists who are instances of humans, have an occupation related to music, and are citizens of Uzbekistan.
+         </p>
+            <a href="https://w.wiki/ETwL" target="_blank" style="color:#013243; font-weight: bold; font-style: italic; text-decoration: none;">
+  🔗 Results
+</a>
+          </td>
+        </tr>
+        <!-- Row 3 -->
+
+         <tr>
+          <td>
+         SELECT ?label ?labelLabel ?description ?image <br><br>
+WHERE {<br><br>
+  ?label wdt:P31/wdt:P279* wd:Q18127. # record label or subclass<br><br>
+  ?label wdt:P17 wd:Q265. # country Uzbekistan<br><br>
+  OPTIONAL {?label schema:description ?description. FILTER(LANG(?description) = "en") }<br><br>
+  OPTIONAL {?label wdt:P18 ?image.}<br><br>
+  SERVICE wikibase:label {bd:serviceParam wikibase:language "en". }<br><br>
+}<br><br>
+LIMIT 50
+          </td>
+          <td>
+<h3>Record labels : 2 results</h3>
+         <p>
+    This query retrieves record labels that are instances of record labels or their subclasses and are based in Uzbekistan. It helps identify entities involved in the production and distribution of Uzbek music.
+         </p>
+            <a href="https://w.wiki/ETwQ" target="_blank" style="color:#013243; font-weight: bold; font-style: italic; text-decoration: none;">
+  🔗 Results
+</a>
+          </td>
+        </tr>
+
+        <!-- Row 4 -->
+
+         <tr>
+          <td>
+       SELECT ?composer ?composerLabel ?description ?image <br><br>
+WHERE {<br><br>
+  ?composer wdt:P31 wd:Q5. # human<br><br>
+  ?composer wdt:P106/wdt:P279* wd:Q36834. # occupation: composer or subclass<br><br>
+  ?composer wdt:P27 wd:Q265. # country of citizenship: Uzbekistan<br><br>
+  OPTIONAL {?composer schema:description ?description. FILTER(LANG(?description) = "en") }<br><br>
+  OPTIONAL {?composer wdt:P18 ?image. }<br><br>
+  SERVICE wikibase:label {bd:serviceParam wikibase:language "en". }<br><br>
+}
+LIMIT 50
+          </td>
+          <td>
+<h3>Composer : 50 results</h3>
+         <p>
+This query identifies composers from Uzbekistan, specifically humans with the occupation of composer or a subclass, and Uzbek citizenship.
+         </p>
+            <a href="https://w.wiki/ETwW " target="_blank" style="color:#013243; font-weight: bold; font-style: italic; text-decoration: none;">
+  🔗 Results
+</a>
+          </td>
+        </tr>
+        <!-- Row 5 -->
+
+         <tr>
+          <td>
+          SELECT ?band ?bandLabel ?description ?image <br><br>
+WHERE { <br><br>
+  ?band wdt:P31/wdt:P279* wd:Q215380. # musical group or subclass <br><br>
+  ?band wdt:P495 wd:Q265. # country of origin Uzbekistan <br><br>
+  OPTIONAL {?band schema:description ?description. FILTER(LANG(?description) = "en") } <br><br>
+  OPTIONAL {?band wdt:P18 ?image. } <br><br>
+  SERVICE wikibase:label {bd:serviceParam wikibase:language "en". } <br><br>
+} <br><br>
+LIMIT 50
+          </td>
+          <td>
+<h3>Bands : 7 results</h3>
+         <p>
+This query retrieves musical groups or bands originating from Uzbekistan, including their English descriptions and images when available. It provides an overview of Uzbek musical ensembles.
+         </p>
+            <a href="https://w.wiki/ETwZ" target="_blank" style="color:#013243; font-weight: bold; font-style: italic; text-decoration: none;">
+  🔗 Results
+</a>
+          </td>
+        </tr>
+        <!-- Row 6 -->
+
+         <tr>
+          <td>
+        SELECT ?singer ?singerLabel ?description ?image <br><br>
+WHERE {<br><br>
+  ?singer wdt:P31 wd:Q5. # human<br><br>
+  ?singer wdt:P106 wd:Q177220. # occupation singer<br><br>
+  ?singer wdt:P27 wd:Q265. # country of citizenship: Uzbekistan<br><br>
+  OPTIONAL {?singer schema:description ?description. FILTER(LANG(?description) = "en") }<br><br>
+  OPTIONAL {?singer wdt:P18 ?image. }<br><br>
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }<br><br>
+}<br><br>
+LIMIT 50
+          </td>
+          <td>
+<h3>Singers : 50 results</h3>
+         <p>
+This query focuses on retrieving singers from Uzbekistan, specifically humans with the occupation of singer and Uzbek citizenship.
+         </p>
+            <a href="https://w.wiki/ETwd " target="_blank" style="color:#013243; font-weight: bold; font-style: italic; text-decoration: none;">
+  🔗 Results
+</a>
+          </td>
+        </tr>
+        <!-- Row 7 -->
+
+         <tr>
+          <td>
+    SELECT ?musician ?musicianLabel ?description ?image <br><br>
+WHERE {<br><br>
+  ?musician wdt:P31 wd:Q5. # human<br><br>
+  ?musician wdt:P27 wd:Q265. # Uzbek citizenship<br><br>
+  OPTIONAL {?musician schema:description ?description. FILTER(LANG(?description) = "en") }<br><br>
+  OPTIONAL {?musician wdt:P18 ?image. }<br><br>
+  FILTER(<br><br>
+    REGEX(LCASE(STR(?description)), "\\brap\\b|\\brapper\\b") &&<br><br>
+    !REGEX(LCASE(STR(?description)), "photographer|cinematographer")<br><br>
+  )<br><br>
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }<br><br>
+}<br><br>
+ORDER BY ?musicianLabel<br><br>
+LIMIT 100<br><br>
+          </td>
+          <td>
+<h3>Uzbek Rappers : 5 results</h3>
+         <p>
+This query retrieves Uzbek musicians whose English descriptions include references to "rap" or "rappers", providing insights into the presence and diversity of rap artists within Uzbekistan's music scene.         </p>
+            <a href="https://w.wiki/ETwp" target="_blank" style="color:#013243; font-weight: bold; font-style: italic; text-decoration: none;">
+  🔗 Results
+</a>
+          </td>
+        </tr>
+
+        <!-- Row 8 -->
+        <tr>
+          <td>
+   SELECT ?item ?itemLabel ?description <br><br>
+WHERE {<br><br>
+  {<br><br>
+    ?item wdt:P31 wd:Q7366. # instance of song<br><br>
+  }<br><br>
+  UNION<br><br>
+  {<br><br>
+    ?item wdt:P31 wd:Q482994. # instance of album<br><br>
+  }<br><br>
+  ?item wdt:P495 wd:Q265. # country of origin: Uzbekistan<br><br>
+  ?item schema:description ?description.<br><br>
+  FILTER(LANG(?description) = "en").<br><br>
+  FILTER(CONTAINS(LCASE(?description), "shashmaqom")). # Replace with relevant Uzbek traditional term<br><br>
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }<br><br>
+}<br><br>
+ORDER BY ?itemLabel<br><br>
+LIMIT 50
+          </td>
+          <td>
+<h3>Uzbek Traditional/Folk Songs and Albums</h3>
+         <p>
+Ne results
+</a>
+          </td>
+        </tr>
+
+
+      </tbody>
+    </table>
+
+  <h2 class="subtitle" style="text-align: left; margin-top: 50px;">🔍 <em>Detecting the Gap:</em></h2>
+    <p style="line-height: 1.4; font-size: 1.2rem;">
+      <!-- Detecting the gap text below remove and paste -->
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, asperiores? Sit nemo, iste illum tenetur molestiae veritatis dignissimos dolor deserunt placeat ipsum ullam illo, enim dolore reprehenderit exercitationem! Beatae atque asperiores excepturi tempora quod ratione et provident aperiam pariatur? Libero ex perspiciatis eum ratione distinctio temporibus doloribus similique fugit atque, laboriosam impedit. Obcaecati a dolorem voluptatum rem quasi! Unde in maxime nisi quisquam quam, magnam enim voluptatum dolore accusamus, vitae fugiat odit expedita obcaecati suscipit maiores perspiciatis officia. Dolore sunt aspernatur, odio laboriosam natus quod numquam mollitia ab quo soluta illum alias consequuntur ipsam? Suscipit reiciendis eum nostrum sed possimus aliquam laudantium, eligendi earum adipisci dolorum consequuntur consectetur, iusto minus neque consequatur odit. Fugit delectus amet natus dignissimos molestiae voluptate repellendus pariatur distinctio suscipit modi tempore aperiam aliquid blanditiis dolor, rem, fugiat dolores deleniti odit eum odio quidem veniam tempora ut! Ipsum quod maiores nisi esse quidem ut ratione! Sed dolor ab, dolore aliquam sit beatae quaerat necessitatibus cum? Laboriosam dolores sit corporis hic labore atque alias, nesciunt quisquam, commodi facilis velit aspernatur quaerat aliquid illo eveniet quos id consequatur, repellat repudiandae fuga! Doloremque consequatur magni quo quam. At ea reiciendis ratione, fugiat sunt soluta vero quisquam facere. Laboriosam inventore, est accusantium soluta adipisci eius exercitationem, et maiores, molestiae odio sequi iusto aliquid quisquam consequatur. Neque, maiores blanditiis assumenda architecto exercitationem magni quaerat! Sed ratione accusantium beatae, ut praesentium, excepturi consequuntur quod aperiam recusandae iste quo provident voluptates dolores. Enim dolores ut dolorum! Quibusdam omnis porro voluptate? Consectetur, laboriosam laudantium.
     </p>
-    <p>
-      In this project, we turn to digital tools to explore how this musical heritage is structured, connected, and represented in online knowledge spaces. Using <strong>SPARQL queries</strong>, <strong>Wikidata</strong>, and <strong>large language models (LLMs)</strong> like ChatGPT, we analyze how musical entities—artists, instruments, genres, and traditions—are documented and interlinked. These methods allow us to assess the visibility and completeness of Uzbek music in digital ecosystems, and to reflect on the challenges of modeling rich cultural traditions within structured data and AI outputs.
-    </p>
-  </div>
+  <h2 class="subtitle" style="text-align: left; margin-top: 50px;">🧠 <em> Zero-shot prompting:</em></h2>
+    <h3 style="text-align: left; font-style: italic;">💬 Question: What are traditional musical instruments used in Uzbekistan?</h3>
 
-</body>
+    <p style="text-align: center; color: #013243; font-size: 32px; font-weight: 700;">🗯️ Deepseek Response :</p>
+    <div>
+        <img src="./assets/images/uzb-deepseek.png" alt="">
+    </div>
+     <p style="text-align: center; color: #013243; font-size: 32px; font-weight: 700;">🗯️ ChatGPT Response :</p>
+    <div>
+        <img src="./assets/images/uzb-chatgpt.png" alt="">
+    </div>
+     <p style="text-align: center; color: #013243; font-size: 32px; font-weight: 700;">🗯️ Gemini Response :</p>
+    <div>
+        <img src="./assets/images/uzb-gemini.png" alt="">
+    </div>
+  <h2 class="subtitle" style="text-align: center; margin-top: 50px;">👾 <em>    Results comparison :</em></h2>
+  <p style="line-height: 1.4; font-size: 1.2rem; text-align: center;">
+    Based on a comparison of the three AI's answers regarding traditional musical instruments in Uzbekistan, here's an analysis to help us find the best one:
+  </p>
+  <h2 class="subtitle" style="text-align: left; margin-top: 50px;"><em>Comparison of Answers:</em></h2>
+    <table class="comparison">
+      <thead>
+        <tr>
+          <th>AIs</th>
+          <th>Pros</th>
+          <th>Cons</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style=" width: 100%;">
+          <td style="">
+	Deepseek
+          </td>
+            <td style="">
+Good categorization (String, Percussion, Wind, Plucked/Zither). Provides transliterated names in Cyrillic script which is helpful for authenticity. Mentions "Shashmaqom" and shared instruments with neighboring countries. Lists 12 distinct instruments. Includes "Sato" and "Qayroq".
+          </td>
+            <td style="">
+Descriptions are concise, sometimes lacking in detail (e.g., does not specify the number of strings for Dutar or Tanbur, or material for Nay).
+          </td>
+        </tr>
+    
+        <tr style=" width: 100%;">
+          <td style="">
+	Gemini
+          </td>
+            <td style="">
+	Good categorization (String, Percussion, Wind, Plucked/Zither). Provides transliterated names in Cyrillic script which is helpful for authenticity. Mentions "Shashmaqom" and shared instruments with neighboring countries. Lists 12 distinct instruments. Includes "Sato" and "Qayroq".          </td>
+            <td style="">
+Descriptions are concise, sometimes lacking in detail (e.g., does not specify the number of strings for Dutar or Tanbur, or material for Nay).
+          </td>
+        </tr>
+        <tr style=" width: 100%;">
+          <td style="">
+ChatGPT
+          </td>
+            <td style="">
+Clear categorization and very concise descriptions. Mentions "Shashmaqom" and shared instruments with neighboring countries. Lists 9 instruments.          </td>
+            <td style="">
+Least comprehensive in terms of the number of instruments listed. Descriptions are basic and lack specific details compared to the others.          </td>
+        </tr>
+
+
+      </tbody>
+    </table>
+  <h2 class="subtitle" style="text-align: center; margin-top: 50px; "><em> Conclusion:</em> <span style="font-weight: 400;">Gemini’s answer  is the best among the three.</span></h2>
+
+<p style="font-size: 24px; line-height: 1.3; text-align: center; font-style: italic;"> <b>Reasoning:</b></p>
+  <p style="font-size: 22px; line-height: 1.3; text-align: left; ">
+1.	<b>Completeness</b>: The response provides the most extensive list of traditional Uzbek musical instruments (17 instruments), covering a wider range of instruments than Deepseek (12) and ChatGPT (9). This offers a more comprehensive overview of Uzbekistan's musical heritage.
+
+<br><br>
+2.	<b>Detail and Accuracy</b>: While all answers are generally accurate, Gemini’s  response often provides slightly more specific and interesting details about the instruments (e.g., the literal meaning of Dutor, the typical number of strings for Tanbur, the material for Gʻijjak, or the number of strings for Chang).
+<br><br>
+
+3.	<b>Context</b>: It effectively connects the instruments to "Shashmaqom" and highlights the "rich cultural exchange along the Silk Road," which adds valuable historical and cultural context to the information.
+<br><br>
+
+While Deepseek's inclusion of Cyrillic script for names is a nice touch and ChatGPT's simplicity can be appealing, Gemini’s response offers the most informative and comprehensive answer for understanding traditional Uzbek musical instruments.
+
+
+  </p>
+  <h2 class="subtitle" style="text-align: center; margin-top: 50px;">✨<em>  RDF Generation:</em></h2>
+  <!-- Rdf text info below ; remove and paste -->
+  <p style="font-size: 20px;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem rerum voluptas quis harum illum, libero ullam iusto dignissimos? Est, totam!</p>
+  <div>
+    <img src="./assets/images/uzbk-rdf.png" alt="">
+  </div>
+  
+  <h2 class="subtitle" style="text-align: center; margin-top: 50px; font-size: 28px; "><em> Conclusion:</em> </h2>
+  <p>
+
+    <!-- Conclusion text below -->
+  <p style="font-size: 20px; text-align: center; line-height: 1.5;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam maxime sunt qui ducimus? Sequi esse consectetur laboriosam veniam rerum libero temporibus fugit, fuga mollitia deserunt voluptas ut amet maiores veritatis, perferendis quas. Neque numquam suscipit quo rem officia alias tempore, excepturi quam nostrum animi, voluptas sint dolorum quaerat commodi quas repellat accusamus enim a esse odit. Quo repellat, enim reprehenderit libero, nesciunt cum fugiat in autem illum velit atque magni omnis aliquam aliquid molestias, vitae ex sunt. Delectus placeat atque tempora, adipisci explicabo at itaque esse odit ut expedita animi consectetur eius autem harum similique, minus assumenda architecto et quia.</p>
+
+  </p>
+
+  
+  </body>
 </html>
