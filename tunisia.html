@@ -19,7 +19,7 @@
       text-align: center;  
     } 
        .subtitle {  
-      text-align: left;  
+      text-align: center;  
       font-size: 1.4rem;  
       font-style: italic;  
       font-weight: bold;  
@@ -177,7 +177,7 @@
           </td>
           <td>
            This SPARQL query is designed to extract structured information about musicians from Tunisia using the Wikidata knowledge base. It focuses specifically on human individuals whose occupation is musician, and who have Tunisian nationality        <br><br>
-           <a href="https://w.wiki/EPuF " style="color: green; text-decoration: none; font-weight: bold;">→ Result</a>   </td>
+           <a href="https://w.wiki/EPuF " style="color:#5C4324; text-decoration: none; font-weight: bold;">→ Result</a>   </td>
             </tr>
          <tr>
           <td>
@@ -211,7 +211,7 @@
             LIMIT 100 
           </td>
           <td>
-          This SPARQL query retrieves a list of Tunisian musicians who have collaborated with international (non-Tunisian) musicians on the same musical work (e.g., a song or album).  <br><br> <a href="https://w.wiki/EPuC  " style="color: green; text-decoration: none; font-weight: bold;">→ Result</a>          </tr>
+          This SPARQL query retrieves a list of Tunisian musicians who have collaborated with international (non-Tunisian) musicians on the same musical work (e.g., a song or album).  <br><br> <a href="https://w.wiki/EPuC  " style="color: #5C4324; text-decoration: none; font-weight: bold;">→ Result</a>          </tr>
          </tr>
         <tr>
           <td>
@@ -232,7 +232,7 @@
             ORDER BY ?startDate<br> 
           </td>
           <td>
-          This query produces an ordered list of festivals held in Tunisia, providing their names, where they are held (if available), and when they start (if recorded) <br><br> <a href="https://w.wiki/EPuj" style="color: green; text-decoration: none; font-weight: bold;">→ Result</a>  </tr>
+          This query produces an ordered list of festivals held in Tunisia, providing their names, where they are held (if available), and when they start (if recorded) <br><br> <a href="https://w.wiki/EPuj" style="color: #5C4324; text-decoration: none; font-weight: bold;">→ Result</a>  </tr>
          </tr>
         <tr>
           <td>
@@ -251,7 +251,7 @@
             ORDER BY ?albumLabel 
           </td>
           <td>
-          This query is designed to retrieve information about musical works (such as songs or albums) that have been created by musicians from Tunisia <br><br> <a href="https://w.wiki/EQ27 " style="color: green; text-decoration: none; font-weight: bold;">→ Result</a>  </tr>
+          This query is designed to retrieve information about musical works (such as songs or albums) that have been created by musicians from Tunisia <br><br> <a href="https://w.wiki/EQ27 " style="color: #5C4324; text-decoration: none; font-weight: bold;">→ Result</a>  </tr>
          </tr>
       </tbody>
     </table>
@@ -280,7 +280,7 @@ In response to this gap, I initiated a focused effort to enrich Wikidata by manu
       <img src="assets/images/gemini prompt for tunisia.png"  
      alt="tunisia3 and ChatGPT"  
      style="display: block; margin: 20px auto; width: 75%; max-width: 750px; height: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.2); border-radius: 8px;" />
-    <h3 style="color:black; font-weight:bold; font-style:italic; font-size:1.25rem;">
+    <h3 style="color:#5C4324; font-weight:bold; font-style:italic; font-size:1.25rem;">
   <span style="font-style:italic;">🗯️</span> Comparison:
 </h3>
       <p class="intro">While both responses include legitimate Tunisian festivals, ChatGPT's inclusion of the "International Festival of the Sahara" is somewhat problematic for this specific task. The International Festival of the Sahara, held in Douz, is primarily a cultural festival celebrating Berber and desert traditions, featuring camel racing, traditional crafts, poetry, and folklore alongside some musical performances. While music is present, it's not fundamentally a music festival in the way that the International Festival of Carthage or jazz festivals are. This suggests that ChatGPT may have been less precise in filtering for festivals that are specifically music-focused, whereas Gemini's selections (particularly the Festival International de Musique Symphonique d'El Jem and Tabarka Jazz Festival) more clearly align with the "music festival" criteria requested in the prompt. </p>
@@ -308,19 +308,6 @@ wd:Q948 p:P2354 [
     pq:P136 wd:Q11401 ;             # Qualifier: genre electronic music
 ] .
   </div>
-       <div class="subtitle">🪄 <em>Simplified version showing clear SPO structure: </em></div>
-      <p class="introo">
-      # Triple 1: Tunisia has Djerba Fest  
-    </p>
-      <div class="rdf-box2">
-         wd:Q948    p:P2354    wd:Q123456789   
-      </div>
-      <p class="introo">
-      # Triple 2: Tunisia has les dunes electroniques  
-    </p>
-      <div class="rdf-box2">
-       wd:Q948   p:P2354    wd:Q987654321  
-      </div>
       <div class="subtitle">📌 <em>conclusion: </em></div>
       <p class="intro">The combination of structured data, semantic technologies, and large language models has provided valuable insights into the digital documentation of Tunisian music. This approach highlighted both the depth of Tunisia's musical heritage and the significant gaps in Wikidata's representation, where accurate information was often missing or important musical traditions were entirely overlooked. The strategies employed to bridge these deficiencies through enhanced data modeling and the application of sophisticated querying and prompting methodologies show considerable potential for improving the documentation and preservation of Tunisia's diverse musical landscape. These findings underscore the need for more comprehensive and accurate representation of tunisian traditionals in semantic knowledge bases.</p>
     </div>
