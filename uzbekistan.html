@@ -195,25 +195,24 @@ height: 50px;
 
       <tr>
           <td>
-           SELECT ?musician ?musicianLabel ?description ?image <br><br>
-WHERE {<br><br>
-  ?musician wdt:P31 wd:Q5. # instance of human<br><br>
-  ?musician wdt:P106/wdt:P279* wd:Q639669. # occupation musician or subclass<br><br>
-  ?musician wdt:P27 wd:Q265. # country of citizenship Uzbekistan<br><br>
-  OPTIONAL {?musician schema:description ?description. FILTER(LANG(?description) = "en") }<br><br>
-  OPTIONAL {?musician wdt:P18 ?image.}<br><br>
-  SERVICE wikibase:label {bd:serviceParam wikibase:language "en". }<br><br>
+           SELECT ?instrument ?instrumentLabel ?image WHERE { <br><br>
+?instrument wdt:P31 wd:Q34379. # instance of musical instrument {<br><br>
+  ?instrument wdt:P495 ?country. # country of origin<br><br>
+  ?country (wdt:P279*) wd:Q265. # Uzbekistan or its subdivisions<br><br>
+  
+  OPTIONAL { ?instrument wdt:P18 ?image. } # image if available<br><br>
+  
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en".  }<br><br>
 }<br><br>
-LIMIT 50
           </td>
           <td>
-<h3>Musicians : 50 results
+<h3>
 </h3>
 
          <p>
-This query retrieves musicians from Uzbekistan. The results will include artists who are instances of humans, have an occupation related to music, and are citizens of Uzbekistan.
+This query was designed to find and list musical instruments that originate from Uzbekistan. It aimed to return each instrument's name (label) and an associated image, if available in the database. However, despite its intended purpose, the query currently yields no results, indicating a potential gap in the documented origin data for musical instruments within the knowledge base.
          </p>
-            <a href="https://w.wiki/ETwL" target="_blank" style="color:#013243; font-weight: bold; font-style: italic; text-decoration: none;">
+            <a href="https://w.wiki/EUyV" target="_blank" style="color:#013243; font-weight: bold; font-style: italic; text-decoration: none;">
   🔗 Results
 </a>
           </td>
@@ -369,9 +368,10 @@ ORDER BY ?itemLabel<br><br>
 LIMIT 50
           </td>
           <td>
-<h3>Uzbek Traditional/Folk Songs and Albums</h3>
          <p>
-Ne results
+This query attempts to find Uzbek traditional or folk songs and albums by searching for items originating from Uzbekistan with "Shashmaqom" in their English descriptions. The fact that it yields no results highlights a significant gap in the digital documentation of these crucial Uzbek musical works.
+ <a href="https://w.wiki/EUyj" target="_blank" style="color:#013243; font-weight: bold; font-style: italic; text-decoration: none;">
+  🔗 Results
 </a>
           </td>
         </tr>
