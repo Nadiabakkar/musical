@@ -37,15 +37,23 @@
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     }
 
-    /* ✅ Add this new section to apply the soft background */
     .content-with-bg {
-      background-image: url("assets/images/background.jpg");
+      position: relative;
+      background-image: url("assets/images/green background.jpg");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
       background-attachment: fixed;
       padding: 20px;
-      backdrop-filter: brightness(0.94);
+      isolation: isolate;
+    }
+
+    .content-with-bg::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(255, 255, 255, 0.7); /* soft white overlay */
+      z-index: -1;
     }
 
     .icons {
@@ -79,10 +87,11 @@
       text-align: center;
       max-width: 700px;
       margin: 30px auto 40px;
-      font-size: 18px;
+      font-size: 20px; /* slightly bigger */
       padding: 0 20px;
       color: #333;
       font-style: italic;
+      font-weight: bold;
     }
 
     .sections {
@@ -121,7 +130,6 @@
     <h2 class="subtitle-line">Bridging music and data in Morocco, Tunisia and Uzbekistan</h2>
   </header>
 
-  <!-- ✅ Start of content with background -->
   <div class="content-with-bg">
     <div class="icons">
       <div class="icon-box">
@@ -149,17 +157,16 @@
         Welcome to our project, where we explore the rich musical heritage of Morocco, Tunisia, and Uzbekistan through the lens of Wikidata knowledge graphs, SPARQL queries, RDF structures, and large language models. By combining these tools, we highlight how traditional music can be represented, explored, and better understood in digital environments.
       </p>
     </div>
-
-    <div class="sections">
-      <h2>📂 Sections</h2>
-      <ul>
-        <li><a href="topic.html">Topic</a></li>
-        <li><a href="methodology.html">Methodology</a></li>
-        <li><a href="challenges.html">Challenges</a></li>
-      </ul>
-    </div>
   </div>
-  <!-- ✅ End of content with background -->
+
+  <div class="sections">
+    <h2>📂 Sections</h2>
+    <ul>
+      <li><a href="topic.html">Topic</a></li>
+      <li><a href="methodology.html">Methodology</a></li>
+      <li><a href="challenges.html">Challenges</a></li>
+    </ul>
+  </div>
 
   <footer>
     &copy; 2025 Soundwaves & Semantic Webs Project – Built with ❤️ and GitHub Pages
