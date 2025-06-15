@@ -8,14 +8,16 @@
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      background-color: #f0f5e9; /* very light gentle greenish */
+      background-color: #f0f5e9;
       color: #333;
     }
 
     header {
-      background-color: #6b8e23; /* earthy green */
+      background-color: #6b8e23;
       padding: 60px 20px 30px;
       text-align: center;
+      z-index: 2;
+      position: relative;
     }
 
     .title-line {
@@ -39,20 +41,20 @@
 
     .content-with-bg {
       position: relative;
-      background-image: url("assets/images/green background.jpg");
+      background-image: url("assets/images/background.jpg");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
       background-attachment: fixed;
-      padding: 20px;
       isolation: isolate;
+      padding: 40px 20px 60px;
     }
 
     .content-with-bg::before {
       content: "";
       position: absolute;
       inset: 0;
-      background-color: rgba(255, 255, 255, 0.7); /* soft white overlay */
+      background-color: rgba(255, 255, 255, 0.7); /* Soft overlay */
       z-index: -1;
     }
 
@@ -60,7 +62,7 @@
       display: flex;
       justify-content: center;
       gap: 40px;
-      margin: 40px 0 20px;
+      margin: 40px 0 30px;
       flex-wrap: wrap;
     }
 
@@ -86,17 +88,18 @@
     .intro {
       text-align: center;
       max-width: 700px;
-      margin: 30px auto 40px;
-      font-size: 20px; /* slightly bigger */
-      padding: 0 20px;
+      margin: 40px auto;
+      font-size: 20px;
+      padding: 0 25px;
       color: #333;
       font-style: italic;
-      font-weight: bold;
+      font-weight: 600;
+      line-height: 1.8;
     }
 
     .sections {
       max-width: 600px;
-      margin: 0 auto 60px;
+      margin: 50px auto 20px;
       text-align: center;
       padding: 0 20px;
     }
@@ -157,15 +160,15 @@
         Welcome to our project, where we explore the rich musical heritage of Morocco, Tunisia, and Uzbekistan through the lens of Wikidata knowledge graphs, SPARQL queries, RDF structures, and large language models. By combining these tools, we highlight how traditional music can be represented, explored, and better understood in digital environments.
       </p>
     </div>
-  </div>
 
-  <div class="sections">
-    <h2>📂 Sections</h2>
-    <ul>
-      <li><a href="topic.html">Topic</a></li>
-      <li><a href="methodology.html">Methodology</a></li>
-      <li><a href="challenges.html">Challenges</a></li>
-    </ul>
+    <div class="sections">
+      <h2>📂 Sections</h2>
+      <ul>
+        <li><a href="topic.html">Topic</a></li>
+        <li><a href="methodology.html">Methodology</a></li>
+        <li><a href="challenges.html">Challenges</a></li>
+      </ul>
+    </div>
   </div>
 
   <footer>
