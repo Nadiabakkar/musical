@@ -1,1 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Musical Knowledge Graphs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      background-color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #1a1a2e;
+    }
 
+    h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      font-style: italic;
+      color: #013243;
+      text-align: center;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.15);
+      margin-bottom: 20px;
+    }
+
+    .content {
+      font-size: 1.125rem;
+      line-height: 1.6;
+      max-width: 900px;
+      margin: 0 auto;
+      color: #333;
+    }
+
+    h3 {
+      color: #4E8183;
+      font-weight: bold;
+      font-style: italic;
+      font-size: 1.5rem;
+      max-width: 850px;
+      margin: 40px auto 10px auto;
+      text-align: left;
+      padding: 0 15px;
+    }
+
+    .section {
+      max-width: 850px;
+      margin: 0 auto 30px auto;
+      text-align: left;
+      font-size: 1.125rem;
+      line-height: 1.5;
+      color: black;
+      padding: 0 15px;
+    }
+
+    .problem {
+      color: #C08088;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎼 Musical Knowledge Graphs</h1>
+  <div class="content">
+
+    <div class="section">
+          This project explores the intersection of cultural heritage and semantic web technologies by focusing on music in Uzbekistan, Morocco, and Tunisia. Through the use of SPARQL queries on Wikidata and zero-shot prompting with language models (ChatGPT, Gemini, DeepSeek), we identify, compare, and validate structured and unstructured knowledge about musicians, instruments, genres, and cultural events. The goal is to highlight existing gaps and propose strategies to enrich Wikidata with underrepresented music-related data from these regions. Our work illustrates how knowledge engineering can contribute to preserving and promoting musical heritage across different cultures.
+    </div>
+
+    <h3>🎶 Why Music?</h3>
+    <div class="section">
+      Music is a universal form of cultural expression that reflects identity, history, and values. It exists in every society but is often underrepresented in structured knowledge bases like Wikidata — especially for countries outside the Global North. By focusing on music, we aim to:
+      <ul>
+        <li>Showcase the rich musical traditions of Uzbekistan, Morocco, and Tunisia</li>
+        <li>Identify data gaps and biases in Wikidata's representation of non-Western cultures</li>
+        <li>Promote cultural diversity in digital knowledge graphs</li>
+        <li>Use music as a gateway topic that connects language, society, and communication — the core themes of our Master’s program</li>
+      </ul>
+    </div>
+
+    <h3>💡 Why it's smart academically</h3>
+    <div class="section">
+      Music is multidisciplinary (touches on culture, linguistics, anthropology, data science).<br>
+      It has structured data potential (musicians, genres, instruments, festivals, albums).<br>
+      It fits perfectly with knowledge engineering, which aims to represent human knowledge in machine-readable form.
+    </div>
+
+    <h3>🧠 Why Wikidata?</h3>
+    <div class="section">
+      We chose Wikidata because it is a central hub of structured, open, and multilingual knowledge that powers many other platforms, including Wikipedia, search engines, and AI systems. It allows us to:
+      <ul>
+        <li>Work with knowledge graphs, which are crucial in knowledge engineering</li>
+        <li>Use SPARQL to query data in a precise, semantic way</li>
+        <li>Contribute to open knowledge, especially for underrepresented regions like Uzbekistan, Morocco, and Tunisia</li>
+        <li>Connect music data with other entities (people, places, instruments, genres, languages) using linked data principles</li>
+      </ul>
+    </div>
+    <h3>🔍 Academic Justification</h3>
+    <div class="section">
+      Wikidata is the largest open knowledge graph in the world.<br>
+      It follows the semantic web standards defined by the W3C (RDF, SPARQL, etc.).<br>
+      It supports multilingualism and global cultural representation.<br>
+      It’s a real-world tool used in digital humanities, AI, and data science.
+    </div>
+
+    <h3>🛠 In Our Project</h3>
+    <div class="section">
+      <ul>
+        <li>We use SPARQL to extract musical knowledge about our countries</li>
+        <li>We compare it with unstructured AI-generated answers (zero-shot prompting)</li>
+        <li>We identify what’s missing or inaccurate — and show how Wikidata can be enriched</li>
+      </ul>
+    </div>
+
+    <h3>🌍 Selected Countries and Why?</h3>
+    <div class="section">
+      The countries in our project — Uzbekistan, Morocco, and Tunisia — were chosen for both personal and academic reasons:
+      <ul>
+        <li>We each represent one of these countries, bringing first-hand cultural knowledge to the topic</li>
+        <li>All three have rich musical traditions (e.g. Shashmaqam in Uzbekistan, Andalusi music in Morocco, Malouf in Tunisia) that are underrepresented in global knowledge bases</li>
+        <li>These regions are often overlooked in structured data platforms like Wikidata</li>
+        <li>The comparison across Central Asia (Uzbekistan) and North Africa (Morocco, Tunisia) allows us to explore regional diversity in music knowledge while keeping the focus aligned</li>
+      </ul>
+    </div>
+
+    <h3>🧠 Academic Fit</h3>
+    <div class="section">
+      <ul>
+        <li>Combines local expertise with global digital tools</li>
+        <li>Addresses knowledge gaps and digital inequalities</li>
+        <li>Aligns with themes of language, society, and communication in our Master’s program</li>
+      </ul>
+    </div>
+
+    <h3>📌 Project Goal</h3>
+    <div class="section">
+      Our goal is to bridge these knowledge gaps by combining:
+      <ul>
+        <li>✔️ Powerful SPARQL queries to explore and retrieve structured data</li>
+        <li>✔️ Zero-shot prompting with LLMs (ChatGPT, Gemini, DeepSeek) to find unstructured knowledge</li>
+        <li>✔️ Manual validation of facts across Wikidata and AI-generated output</li>
+        <li>✔️ A clear, multilingual GitHub Pages website documenting our findings and methods</li>
+      </ul>
+      This project demonstrates how human-centered knowledge engineering can enhance global cultural representation in open-source semantic databases like Wikidata.
+    </div>
+
+  </div>
+</body>
+</html>
