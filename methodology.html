@@ -5,19 +5,19 @@
   <meta charset="UTF-8" />  
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body {  
-      margin: 0;  
-      background-color: #FADADD; /* baby pink */  
-      font-family: 'Georgia', serif;  
-      color: #3e2c23; /* dark brown text */  
-      display: flex;  
-      justify-content: center;  
-      padding: 40px 20px; 
-    }
+     body {
+      margin: 0;
+      padding: 40px 20px;
+      background-color:#f7fbfc; /* pastel blue */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #1a1a2e; /* almost black-blue */
+     }
     .container {  
-      max-width: 1000px;  
-      width: 100%;  
-      text-align: center;  
+      font-size: 1.125rem;
+      line-height: 1.6;
+      max-width: 900px;
+      margin: 0 auto;
+      color: #333; 
     }  
     p.intro {  
       font-size: 1.15rem;  
@@ -42,26 +42,16 @@
       text-align: left;  
     }  
      .subtitle {  
-      text-align: left;  
-      font-size: 1.4rem;  
-      font-style: italic;  
-      font-weight: bold;  
-      color: #6b2e2e; /* match title color */  
-      margin: 30px 0 15px 0;  
-      padding-left: 15px; /* align with intro */  
+      style="max-width: 850px; 
+       margin: 20px auto 10px auto; 
+       text-align: left; 
+       font-weight: bold;
+       font-style: italic; 
+       font-size: 1.4rem; 
+       color:#4E8183; 
+       padding: 0 15px;" 
     }  
-    .top-line {
-            height: 2px;
-            background: linear-gradient(90deg,  #3e2c23  0%,  #3e2c23 100%)
-            margin-bottom: 20px;
-            border-radius: 1px;
-        }
-    .bottom-line {
-            height: 2px;
-            background: linear-gradient(90deg,  #3e2c23  0%,  #3e2c23 100%)
-            margin-bottom: 20px;
-            border-radius: 1px;
-        }
+
     .table-container {
             background: white;
             border-radius: 8px;
@@ -120,41 +110,39 @@
 <body>
    <div class="container">
      <h1>Methodology</h1>
-  <p class="intro"> Our project leverages the synergy between sophisticated Knowledge Graph querying  and  Language Models to systematically identify, validate, and populate missing factual information about diverse musical elements across selected countries which are Tunisia, Morroco and Uzbakstan within the Wikidata ecosystem </p>
-    <div class="top-line"></div>
-     <div class="subtitle">🎯<em>Purpose:</em></div>
-     <div class="bottom-line"></div>
-     <p class= "introo">To enhance the comprehensiveness of semantic datasets through:
+  <p style="max-width: 850px; margin: 0 auto; text-align: left; color: black; font-size: 1.1rem; font-style: normal; font-weight: normal; padding: 0 15px;"> Our project leverages the synergy between sophisticated Knowledge Graph querying  and  Language Models to systematically identify, validate, and populate missing factual information about diverse musical elements across selected countries which are Tunisia, Morroco and Uzbakstan within the Wikidata ecosystem </p>
+   
+     <div style="max-width: 850px; margin: 20px auto 10px auto; text-align: left; 
+           font-weight: bold; font-style: italic; font-size: 1.4rem; 
+           color:#4E8183; padding: 0 15px;">🎯<em>Purpose:</em></div>
+     
+     <p style="max-width: 850px; margin: 0 auto; text-align: left; color: black; font-size: 1.1rem; font-style: normal; font-weight: normal; padding: 0 15px;">To enhance the comprehensiveness of semantic datasets through:
        <br>
 - Employing SPARQL queries to systematically detect information deficiencies and incomplete country profiles 
 <br>
 - Leveraging Large Language Models to extract and restructure absent knowledge elements 
 <br>
 - Disseminating methodologies and results through transparent, replicable documentation </p>
-     <div class="top-line"></div>
-   <div class="subtitle">🔬<em>Target of examination</em></div>
-     <div class="bottom-line"></div>
-   <p class= "introo"> We focused on 3 different countries:  
+   <div style="max-width: 850px; margin: 20px auto 10px auto; text-align: left; 
+           font-weight: bold; font-style: italic; font-size: 1.4rem; 
+           color:#4E8183; padding: 0 15px;">🔬<em>Target of examination</em></div>
+   <p style="max-width: 850px; margin: 0 auto; text-align: left; color: black; font-size: 1.1rem; font-style: normal; font-weight: normal; padding: 0 15px;" > We focused on 3 different countries:  
 <br>
 -Tunisia  
 <br>
 -Morroco 
 <br>
 -Uzbakistan </p>
-     <div class="top-line"></div>
     <div class="subtitle">🛠<em> 1- Crafting SPARQL queries</em></div>
-     <div class="bottom-line"></div>
-     <p class="introo">
+     <p style="max-width: 850px; margin: 0 auto; text-align: left; color: black; font-size: 1.1rem; font-style: normal; font-weight: normal; padding: 0 15px;">
        We constructed sophisticated SPARQL queries incorporating diverse operators: 
 <br>
 - VALUES, ORDER BY, FILTER, OPTIONAL, UNION, DISTINCT, REGEX, LIMIT, SERVICE 
 <br>
 => These analytical constructs enabled us to retrieve present information and identify absent data points 
        </p>
-     <div class="top-line"></div>
      <div class="subtitle">📊<em>2- Using Language Models to Address Data Gaps</em></div>
-     <div class="bottom-line"></div>
-     <p class="intoo">
+     <p style="max-width: 850px; margin: 0 auto; text-align: left; color: black; font-size: 1.1rem; font-style: normal; font-weight: normal; padding: 0 15px;">
        We employed three distinct prompting strategies across various scenarios: 
      </p>
      <br>
@@ -183,12 +171,10 @@
         </table>
     </div>
      <div class="subtitle">🗂<em> 3- RDF generation</em></div>
-     <p class= "introo">
+     <p style="max-width: 850px; margin: 0 auto; text-align: left; color: black; font-size: 1.1rem; font-style: normal; font-weight: normal; padding: 0 15px;">
        LLMs were asked to return RDF triples using Wikidata ontology that fills in the gap which were written in turtle format and simplified to show SPO clear structure 
      </p>
-     <div class="top-line"></div>
      <div class="subtitle">🧰<em> Summery of tools used</em></div>
-     <div class="bottom-line"></div>
      <div class="table-container">
         <table>
             <thead>
