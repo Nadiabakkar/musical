@@ -37,6 +37,17 @@
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     }
 
+    /* ✅ Add this new section to apply the soft background */
+    .content-with-bg {
+      background-image: url("assets/images/background.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+      padding: 20px;
+      backdrop-filter: brightness(0.94);
+    }
+
     .icons {
       display: flex;
       justify-content: center;
@@ -110,41 +121,45 @@
     <h2 class="subtitle-line">Bridging music and data in Morocco, Tunisia and Uzbekistan</h2>
   </header>
 
-  <div class="icons">
-    <div class="icon-box">
-      <a href="morocco.html">
-        <img src="assets/images/Morocco.png" alt="Morocco" />
-      </a>
-      <p>Morocco</p>
+  <!-- ✅ Start of content with background -->
+  <div class="content-with-bg">
+    <div class="icons">
+      <div class="icon-box">
+        <a href="morocco.html">
+          <img src="assets/images/Morocco.png" alt="Morocco" />
+        </a>
+        <p>Morocco</p>
+      </div>
+      <div class="icon-box">
+        <a href="tunisia.html">
+          <img src="assets/images/Tunisia.png" alt="Tunisia" />
+        </a>
+        <p>Tunisia</p>
+      </div>
+      <div class="icon-box">
+        <a href="uzbekistan.html">
+          <img src="assets/images/Uzbekistan.jpg" alt="Uzbekistan" />
+        </a>
+        <p>Uzbekistan</p>
+      </div>
     </div>
-    <div class="icon-box">
-      <a href="tunisia.html">
-        <img src="assets/images/Tunisia.png" alt="Tunisia" />
-      </a>
-      <p>Tunisia</p>
-    </div>
-    <div class="icon-box">
-      <a href="uzbekistan.html">
-        <img src="assets/images/Uzbekistan.jpg" alt="Uzbekistan" />
-      </a>
-      <p>Uzbekistan</p>
-    </div>
-  </div>
 
-  <div class="intro">
-    <p>
-      Welcome to our project, where we explore the rich musical heritage of Morocco, Tunisia, and Uzbekistan through the lens of Wikidata knowledge graphs, SPARQL queries, RDF structures, and large language models. By combining these tools, we highlight how traditional music can be represented, explored, and better understood in digital environments.
-    </p>
-  </div>
+    <div class="intro">
+      <p>
+        Welcome to our project, where we explore the rich musical heritage of Morocco, Tunisia, and Uzbekistan through the lens of Wikidata knowledge graphs, SPARQL queries, RDF structures, and large language models. By combining these tools, we highlight how traditional music can be represented, explored, and better understood in digital environments.
+      </p>
+    </div>
 
-  <div class="sections">
-    <h2>📂 Sections</h2>
-    <ul>
-      <li><a href="topic.html">Topic</a></li>
-      <li><a href="methodology.html">Methodology</a></li>
-      <li><a href="challenges.html">Challenges</a></li>
-    </ul>
+    <div class="sections">
+      <h2>📂 Sections</h2>
+      <ul>
+        <li><a href="topic.html">Topic</a></li>
+        <li><a href="methodology.html">Methodology</a></li>
+        <li><a href="challenges.html">Challenges</a></li>
+      </ul>
+    </div>
   </div>
+  <!-- ✅ End of content with background -->
 
   <footer>
     &copy; 2025 Soundwaves & Semantic Webs Project – Built with ❤️ and GitHub Pages
